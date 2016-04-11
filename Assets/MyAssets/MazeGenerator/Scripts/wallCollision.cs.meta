@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: a93230e5621e7064d82f1491b259e2da
+timeCreated: 1460215906
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - myCoolPrefab: {fileID: 413436, guid: de16cf4a1ef2505498380c8d50457503, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

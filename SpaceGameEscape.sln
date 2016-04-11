@@ -1,0 +1,35 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{C4572CE3-7AC1-6646-2DF6-1948BE9A73C8}") = "SpaceGameEscape", "Assembly-CSharp-firstpass.csproj", "{C0E75370-7F55-23F9-862E-A5D21C961308}"
+EndProject
+Project("{C4572CE3-7AC1-6646-2DF6-1948BE9A73C8}") = "SpaceGameEscape", "Assembly-CSharp.csproj", "{D7CD33DB-5C64-CAAE-F7A8-5A3F5E34EDDA}"
+EndProject
+Project("{C4572CE3-7AC1-6646-2DF6-1948BE9A73C8}") = "SpaceGameEscape", "Assembly-CSharp-Editor.csproj", "{E56F030F-5A7A-EBBA-0E38-03D59A19F0F5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C0E75370-7F55-23F9-862E-A5D21C961308}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0E75370-7F55-23F9-862E-A5D21C961308}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0E75370-7F55-23F9-862E-A5D21C961308}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0E75370-7F55-23F9-862E-A5D21C961308}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7CD33DB-5C64-CAAE-F7A8-5A3F5E34EDDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7CD33DB-5C64-CAAE-F7A8-5A3F5E34EDDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7CD33DB-5C64-CAAE-F7A8-5A3F5E34EDDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7CD33DB-5C64-CAAE-F7A8-5A3F5E34EDDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E56F030F-5A7A-EBBA-0E38-03D59A19F0F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E56F030F-5A7A-EBBA-0E38-03D59A19F0F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E56F030F-5A7A-EBBA-0E38-03D59A19F0F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E56F030F-5A7A-EBBA-0E38-03D59A19F0F5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
