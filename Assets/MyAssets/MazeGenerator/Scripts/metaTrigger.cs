@@ -14,6 +14,8 @@ public class metaTrigger : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-
+        GameObject control = GameObject.Find("GameController");
+        GameControl gameControl = control.GetComponent<GameControl>();
+        gameControl.endMiniGame(true);
     }
 }

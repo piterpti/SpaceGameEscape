@@ -4,7 +4,7 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class ComputerHandler : MonoBehaviour {
+public class ComputerHandlerMinigame : MonoBehaviour {
 
     [SerializeField]
     private string[] characterNames = {"Sciencist"};
@@ -17,19 +17,13 @@ public class ComputerHandler : MonoBehaviour {
     [SerializeField]
 
     public GameControl state;
-
-
-    private Animation doorAnimation;
+    private bool doorHacked = false;
     private bool isDoorOpen = false;
+    private Animation doorAnimation;
 
 	void Start ()
     {
         doorAnimation = doors.GetComponent<Animation>();
-	}
-	
-	void Update ()
-    {
-
 	}
 
     void OnTriggerStay(Collider other)
@@ -41,13 +35,20 @@ public class ComputerHandler : MonoBehaviour {
                 interactionText.text = textToDisplay;
                 if (Input.GetKeyDown(KeyCode.F))
                 {
-                    if (!isDoorOpen)
+                    if (!doorHacked)
                     {
-                        DoorOpen();
+                        state.openMiniGame();
                     }
                     else
                     {
-                        DoorClose();
+                        if (!isDoorOpen)
+                        {
+                            DoorOpen();
+                        }
+                        else
+                        {
+                            DoorClose();
+                        }
                     }
                 }
                 
@@ -87,5 +88,15 @@ public class ComputerHandler : MonoBehaviour {
             textToDisplay = "F aby otworzyć";
         }
         
+    }
+
+    public void changeDoorHacked()
+    {
+        doorHacked = true;
+        DoorOpen();
+        textToDisplay = "F aby zamknąć";
+        characterNames = new string[]{ Constants.CHARACTER_SCIENTIST,
+                                        Constants.CHARACTER_MAYOMA,
+                                        Constants.CHARACTER_CATWOMAN};
     }
 }

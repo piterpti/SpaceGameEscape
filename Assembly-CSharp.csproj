@@ -57,9 +57,11 @@
      <Compile Include="Assets\MyScripts\Character Control\Sciencist\SciencistCharacter.cs" />
      <Compile Include="Assets\MyScripts\Character Control\Sciencist\SciencistController.cs" />
      <Compile Include="Assets\MyScripts\ComputerHandler.cs" />
+     <Compile Include="Assets\MyScripts\ComputerHandlerMinigame.cs" />
      <Compile Include="Assets\MyScripts\Constants.cs" />
      <Compile Include="Assets\MyScripts\ControllerSetup.cs" />
      <Compile Include="Assets\MyScripts\CubeDestroy.cs" />
+     <Compile Include="Assets\MyScripts\GameControl.cs" />
      <Compile Include="Assets\MyScripts\StartGame.cs" />
      <Compile Include="Assets\MyScripts\WowCamera.cs" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />

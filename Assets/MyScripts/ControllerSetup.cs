@@ -16,9 +16,12 @@ public class ControllerSetup : MonoBehaviour
     [SerializeField]
     private WowCamera wowCamera;
 
+    public static GameObject CURRENT_CHARACTER;
+
     void Start()
     {
         wowCamera.target = character_sciencist.transform;
+        CURRENT_CHARACTER = character_sciencist;
         EnableCharacterControl(character_sciencist);
         DisableCharacterControl(character_mayoma);
         DisableCharacterControl(character_catwoman);
@@ -35,6 +38,7 @@ public class ControllerSetup : MonoBehaviour
         if (Input.GetKeyDown("1"))
         {            
             wowCamera.target = character_mayoma.transform;
+            CURRENT_CHARACTER = character_mayoma;
             EnableCharacterControl(character_mayoma);
             DisableCharacterControl(character_sciencist);
             DisableCharacterControl(character_catwoman);
@@ -43,6 +47,7 @@ public class ControllerSetup : MonoBehaviour
         if (Input.GetKeyDown("2"))
         {           
             wowCamera.target = character_sciencist.transform;
+            CURRENT_CHARACTER = character_sciencist;
             EnableCharacterControl(character_sciencist);
             DisableCharacterControl(character_mayoma);
             DisableCharacterControl(character_catwoman);
@@ -51,6 +56,7 @@ public class ControllerSetup : MonoBehaviour
         if (Input.GetKeyDown("3"))
         {           
             wowCamera.target = character_catwoman.transform;
+            CURRENT_CHARACTER = character_catwoman;
             EnableCharacterControl(character_catwoman);
             DisableCharacterControl(character_mayoma);
             DisableCharacterControl(character_sciencist);
@@ -96,5 +102,18 @@ public class ControllerSetup : MonoBehaviour
             character.GetComponent<CatwomanController>().enabled = true;
             character.GetComponent<CatwomanCharacter>().enabled = true;
         }
+    }
+
+    public void EnableCurrentCharacter()
+    {
+        DisableAllCharacters();
+        EnableCharacterControl(CURRENT_CHARACTER);
+    }
+
+    public void DisableAllCharacters()
+    {
+        DisableCharacterControl(character_mayoma);
+        DisableCharacterControl(character_sciencist);
+        DisableCharacterControl(character_catwoman);
     }
 }
