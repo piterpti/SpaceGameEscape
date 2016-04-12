@@ -7,6 +7,7 @@ public class CubeDestroy : MonoBehaviour {
     {
         if(other.gameObject.name.Equals(Constants.CHARACTER_MAYOMA))
         {
+            GetComponent<BoxCollider>().enabled = false;
             GetComponent<Animator>().enabled = true;
             Destroy(gameObject, 2f);
         }

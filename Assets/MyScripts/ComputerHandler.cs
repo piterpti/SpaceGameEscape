@@ -38,6 +38,7 @@ public class ComputerHandler : MonoBehaviour {
         {
             if (other.gameObject == ControllerSetup.CURRENT_CHARACTER)
             {
+                interactionText.enabled = true;
                 interactionText.text = textToDisplay;
                 if (Input.GetKeyDown(KeyCode.F))
                 {
@@ -54,14 +55,14 @@ public class ComputerHandler : MonoBehaviour {
             }
             else
             {
-                interactionText.text = "";
+                interactionText.enabled = false;
             }
         }
     }
 
     void OnTriggerExit()
     {
-        interactionText.text = "";
+        interactionText.enabled = false;
     }
 
     // it must be public

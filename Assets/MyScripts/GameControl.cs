@@ -23,6 +23,7 @@ public class GameControl : MonoBehaviour {
     {        
         controllerSetup = GetComponent<ControllerSetup>();
         wowCamera = mainCamera.GetComponent<WowCamera>();
+        Cursor.visible = false;
     }
     // SINGLETON
     void Awake()
@@ -55,6 +56,7 @@ public class GameControl : MonoBehaviour {
         mainCamera.transform.rotation = Quaternion.identity;
         characterText.enabled = false;
         interactionText.enabled = false;
+        Cursor.visible = true;
     }
 
     public void endMiniGame(bool status)
@@ -68,6 +70,7 @@ public class GameControl : MonoBehaviour {
         }
         characterText.enabled = true;
         interactionText.enabled = true;
+        Cursor.visible = false;
     }
 
 }
