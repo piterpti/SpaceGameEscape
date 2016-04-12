@@ -25,19 +25,6 @@ public class GameControl : MonoBehaviour {
         wowCamera = mainCamera.GetComponent<WowCamera>();
         Cursor.visible = false;
     }
-    // SINGLETON
-    void Awake()
-    {
-        if(control == null)
-        {
-            DontDestroyOnLoad(gameObject);
-            control = this;
-        }
-        else if(control != this)
-        {
-            Destroy(gameObject);
-        }
-    }
 
     public void Update()
     {

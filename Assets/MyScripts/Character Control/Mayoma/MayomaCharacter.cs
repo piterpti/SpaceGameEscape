@@ -11,7 +11,7 @@ public class MayomaCharacter : MonoBehaviour
     [SerializeField]
     float m_StationaryTurnSpeed = 180;
     [SerializeField]
-    float m_JumpPower = 6f;
+    float m_JumpPower = 4f;
     [Range(1f, 4f)]
     [SerializeField]
     float m_GravityMultiplier = 2f;

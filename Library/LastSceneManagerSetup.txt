@@ -2,6 +2,3 @@ sceneSetups:
 - path: Assets/MyScenes/Lvl1.unity
   isLoaded: 1
   isActive: 1
-- path: Assets/MyScenes/DragMiniGame.unity
-  isLoaded: 1
-  isActive: 0

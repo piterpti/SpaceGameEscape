@@ -64,6 +64,7 @@
      <Compile Include="Assets\MyScripts\CubeDestroy.cs" />
      <Compile Include="Assets\MyScripts\GameControl.cs" />
      <Compile Include="Assets\MyScripts\Hack.cs" />
+     <Compile Include="Assets\MyScripts\Lvl1Win.cs" />
      <Compile Include="Assets\MyScripts\StartGame.cs" />
      <Compile Include="Assets\MyScripts\WowCamera.cs" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
