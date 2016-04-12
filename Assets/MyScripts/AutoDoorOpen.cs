@@ -6,33 +6,26 @@ public class AutoDoorOpen : MonoBehaviour {
     private Animation doorAnimation;
     private bool doorOpen = false;
 
-    int interval = 5;
-    float nextTime = 0;
-
     void Start()
     {
         doorAnimation = GetComponent<Animation>();
     }
 
-    void Update()
-    {
-        if(Time.time >= nextTime)
-        {
-            if (doorOpen)
-            {
-                DoorClose();
-            }
-            nextTime += interval;
-        }
-    }
+    
 
 	void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.name.Equals(Constants.CHARACTER_SCIENTIST))
+        if (other.gameObject.name.Equals(Constants.CHARACTER_SCIENTIST) ||
+            other.gameObject.name.Equals(Constants.CHARACTER_CATWOMAN) ||
+            other.gameObject.name.Equals(Constants.CHARACTER_MAYOMA))
         {
             DoorOpen();
-        }
-        nextTime = Time.time + interval;
+        }       
+    }
+
+    void OnTriggerExit()
+    {
+        DoorClose();
     }
     
 
@@ -40,7 +33,7 @@ public class AutoDoorOpen : MonoBehaviour {
     {
         if (!doorOpen)
         {
-            doorAnimation["door1Open"].speed = 1;
+            doorAnimation["doorAutoOpen"].speed = 1;
             doorAnimation.Play();
             doorOpen = true;
         }
@@ -50,8 +43,8 @@ public class AutoDoorOpen : MonoBehaviour {
     {
         if (doorOpen)
         {
-            doorAnimation["door1Open"].time = doorAnimation["door1Open"].length;
-            doorAnimation["door1Open"].speed = -1;
+            doorAnimation["doorAutoOpen"].time = doorAnimation["doorAutoOpen"].length;
+            doorAnimation["doorAutoOpen"].speed = -1;
             doorAnimation.Play();
             doorOpen = false;
         }

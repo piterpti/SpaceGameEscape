@@ -31,8 +31,7 @@ public class ComputerHandlerMinigame : MonoBehaviour {
         if(Array.Exists(characterNames, element => element == other.gameObject.name))
         {
             if (other.gameObject == ControllerSetup.CURRENT_CHARACTER)
-            {
-                interactionText.enabled = true;
+            {                
                 interactionText.text = textToDisplay;
                 if (Input.GetKeyDown(KeyCode.F))
                 {
@@ -55,14 +54,14 @@ public class ComputerHandlerMinigame : MonoBehaviour {
             }
             else
             {
-                interactionText.enabled = false;
+                interactionText.text = "";
             }
         }
     }
 
     void OnTriggerExit()
     {
-        interactionText.enabled = false;
+        interactionText.text = "";
     }
 
     // it must be public
@@ -103,5 +102,9 @@ public class ComputerHandlerMinigame : MonoBehaviour {
         doorLight.GetComponent<Light>().color = Color.green;
         GameObject.Find("DoorLamp1").GetComponent<Renderer>().material.color = Color.green;
         GameObject.Find("DoorLamp2").GetComponent<Renderer>().material.color = Color.green;
+        GameObject.Find("DoorLamp3").GetComponent<Renderer>().material.color = Color.green;
+        GameObject.Find("DoorLamp4").GetComponent<Renderer>().material.color = Color.green;
+        GameObject.Find("DoorLamp5").GetComponent<Renderer>().material.color = Color.green;
+        GameObject.Find("DoorLamp6").GetComponent<Renderer>().material.color = Color.green;
     }
 }
