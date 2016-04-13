@@ -15,6 +15,8 @@ public class GameControl : MonoBehaviour {
     private Text characterText;
     [SerializeField]
     private Text interactionText;
+    [SerializeField]
+    private Canvas helpCanvas;
 
     private static ControllerSetup controllerSetup;
     private static WowCamera wowCamera;
@@ -23,6 +25,7 @@ public class GameControl : MonoBehaviour {
     {        
         controllerSetup = GetComponent<ControllerSetup>();
         wowCamera = mainCamera.GetComponent<WowCamera>();
+        helpCanvas.enabled = false;
         Cursor.visible = false;
     }
 
@@ -32,6 +35,15 @@ public class GameControl : MonoBehaviour {
         {
             endMiniGame(false);
         }
+        if(Input.GetKeyDown(KeyCode.Tab))
+        {
+            helpCanvas.enabled = true;
+        }
+        if (Input.GetKeyUp(KeyCode.Tab))
+        {
+            helpCanvas.enabled = false;
+        }
+
     }
 
     public void openMiniGame()
