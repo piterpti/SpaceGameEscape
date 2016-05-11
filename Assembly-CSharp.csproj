@@ -68,6 +68,7 @@
      <Compile Include="Assets\MyScripts\Lvl1Win.cs" />
      <Compile Include="Assets\MyScripts\StartGame.cs" />
      <Compile Include="Assets\MyScripts\WowCamera.cs" />
+     <Compile Include="Assets\laserScript.cs" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
  <Reference Include="UnityEngine.UI">
