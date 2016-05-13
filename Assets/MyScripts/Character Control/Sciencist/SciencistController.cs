@@ -54,6 +54,7 @@ public class SciencistController : MonoBehaviour
     {
         if (m_manual)
         {
+            agent.enabled = false;
             // read inputs
             float h = CrossPlatformInputManager.GetAxis("Horizontal");
             float v = CrossPlatformInputManager.GetAxis("Vertical");
@@ -85,12 +86,12 @@ public class SciencistController : MonoBehaviour
             agent.enabled = true;
             agent.SetDestination(target.position);
             float distance = Vector3.Distance(target.transform.position, this.transform.position);
-            if (distance > 3f)
+            if (distance > 4f)
             {
                 m_Animator.SetFloat("Forward", 0.7f, 0.1f, Time.deltaTime);
                 //m_Animator.SetFloat("Turn", 0.7f, 0.1f, Time.deltaTime);
             }
-            if (distance <= 2.5f)
+            if (distance <= 3.5f)
             {
                 m_Animator.SetFloat("Forward", 0, 0, Time.deltaTime);
             }

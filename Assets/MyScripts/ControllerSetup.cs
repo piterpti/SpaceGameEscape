@@ -17,9 +17,11 @@ public class ControllerSetup : MonoBehaviour
     private WowCamera wowCamera;
 
     public static GameObject CURRENT_CHARACTER;
+    private static bool character_change_available;
 
     void Start()
     {
+        character_change_available = true;
         wowCamera.target = character_sciencist.transform;
         CURRENT_CHARACTER = character_sciencist;
         //set follow target to bot
@@ -35,7 +37,11 @@ public class ControllerSetup : MonoBehaviour
 
     void Update()
     {
-        GetInput();
+        if (character_change_available)
+        {
+            GetInput();
+        }
+        
     }
 
     void GetInput()
@@ -136,5 +142,14 @@ public class ControllerSetup : MonoBehaviour
         DisableCharacterControl(character_mayoma);
         DisableCharacterControl(character_sciencist);
         DisableCharacterControl(character_catwoman);
+    }
+
+    public static void EnableCharacterChange()
+    {
+        character_change_available = true;
+    }
+    public static void DisableCharacterChange()
+    {
+        character_change_available = false;
     }
 }
