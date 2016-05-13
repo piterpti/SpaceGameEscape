@@ -64,8 +64,7 @@ public class MayomaCharacter : MonoBehaviour
         CheckGroundStatus();
         move = Vector3.ProjectOnPlane(move, m_GroundNormal);
         m_TurnAmount = Mathf.Atan2(move.x, move.z);
-        m_ForwardAmount = move.z;
-        Debug.Log(m_TurnAmount);
+        m_ForwardAmount = move.z;       
 
         ApplyExtraTurnRotation();
 
