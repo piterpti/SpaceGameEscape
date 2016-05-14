@@ -75,6 +75,7 @@
      <Compile Include="Assets\MyScripts\Lvl2\FloorStand.cs" />
      <Compile Include="Assets\MyScripts\Lvl2\LaserCollision.cs" />
      <Compile Include="Assets\MyScripts\Lvl2\LaserOff.cs" />
+     <Compile Include="Assets\MyScripts\Lvl2\Lvl2Win.cs" />
      <Compile Include="Assets\MyScripts\Lvl2\SetLastDoor.cs" />
      <Compile Include="Assets\MyScripts\TriggersStript\VentilationTrigger.cs" />
      <Compile Include="Assets\MyScripts\WowCamera.cs" />

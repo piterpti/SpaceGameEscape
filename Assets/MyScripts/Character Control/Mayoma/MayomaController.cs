@@ -81,7 +81,7 @@ public class MayomaController : MonoBehaviour
 
 
         }
-        /*else
+        else
         {
             //bot
             agent.enabled = true;
@@ -96,7 +96,7 @@ public class MayomaController : MonoBehaviour
             }
 
 
-        }*/
+        }
             
 
     }

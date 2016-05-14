@@ -18,7 +18,7 @@ public class wallCollision : MonoBehaviour {
         counter = 0;
         foreach(GameObject player in GameObject.FindGameObjectsWithTag("MinigamePlayer"))
         {
-            if(counter++ > 1)
+            if(++counter > 1)
             {
                 Destroy(player);
             }

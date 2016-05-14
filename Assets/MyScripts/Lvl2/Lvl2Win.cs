@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Lvl1Win : MonoBehaviour {
+public class Lvl2Win : MonoBehaviour {
 
     [SerializeField]
     private Text interactionText;
@@ -12,20 +12,25 @@ public class Lvl1Win : MonoBehaviour {
     private bool CATWOMAN_ENTER = false;
     private bool SCIENCIST_ENTER = false;
 
-    private const string NEXT_SCENE = "Lvl2";
+    private const string NEXT_SCENE = "Menu";
+
+
+    void Start () {
+	
+	}
 
     void Update()
     {
-        if(MAYOMA_ENTER && CATWOMAN_ENTER && SCIENCIST_ENTER)
+        if (MAYOMA_ENTER && CATWOMAN_ENTER && SCIENCIST_ENTER)
         {
             interactionText.text = "Wciśnij F, aby przejśc dalej";
-            if(Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.F))
             {
                 SceneManager.LoadScene(NEXT_SCENE);
                 Cursor.visible = true;
             }
         }
-        if(Input.GetKeyDown(KeyCode.RightShift))
+        if (Input.GetKeyDown(KeyCode.RightShift))
         {
             Cursor.visible = true;
             GameObject minigame = GameObject.Find("Minigame");
@@ -37,7 +42,7 @@ public class Lvl1Win : MonoBehaviour {
 
     void OnTriggerStay(Collider other)
     {
-        if(other.gameObject.name.Equals(Constants.CHARACTER_MAYOMA))
+        if (other.gameObject.name.Equals(Constants.CHARACTER_MAYOMA))
         {
             MAYOMA_ENTER = true;
         }
@@ -67,5 +72,4 @@ public class Lvl1Win : MonoBehaviour {
         }
         interactionText.text = "";
     }
-       
 }

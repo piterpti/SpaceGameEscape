@@ -80,7 +80,7 @@ public class SciencistController : MonoBehaviour
             // pass all parameters to the character control script
             m_Character.Move(m_Move, false, false);
         }
-        /*else
+        else
         {
             //bot
             agent.enabled = true;
@@ -97,7 +97,7 @@ public class SciencistController : MonoBehaviour
             }
 
 
-        }*/
+        }
     }
 }
 

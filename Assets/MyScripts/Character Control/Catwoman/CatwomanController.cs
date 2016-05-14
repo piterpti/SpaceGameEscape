@@ -78,7 +78,7 @@ public class CatwomanController : MonoBehaviour
             m_Character.Move(m_Move, crouch, m_Jump);
             m_Jump = false;
         }
-        /*else
+        else
         {
             //bot
             agent.enabled = true;
@@ -94,6 +94,6 @@ public class CatwomanController : MonoBehaviour
                 m_Animator.SetFloat("Forward", 0, 0, Time.deltaTime);
             }
 
-        }*/
+        }
     }
 }
