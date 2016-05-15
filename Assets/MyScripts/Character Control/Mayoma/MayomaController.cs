@@ -10,7 +10,7 @@ public class MayomaController : MonoBehaviour
     private Vector3 m_CamForward;             // The current forward direction of the camera
     private Vector3 m_Move;
     private bool m_Jump;
-    //test
+    public bool m_folow_main_character = true;
     public bool m_manual = false;
     public NavMeshAgent agent;
     public Transform target;
@@ -86,8 +86,11 @@ public class MayomaController : MonoBehaviour
         }
         else
         {
-            if (navEnabled)
-            { //bot
+
+            if (m_folow_main_character)
+            {
+                //bot folow main character
+
                 agent.enabled = true;
                 agent.SetDestination(target.position);
                 float distance = Vector3.Distance(target.transform.position, this.transform.position);
@@ -100,11 +103,14 @@ public class MayomaController : MonoBehaviour
                 {
                     m_Animator.SetFloat("Forward", 0, 0, Time.deltaTime);
                 }
+
+            }
+            else
+            {
+                agent.enabled = false;
             }
 
         }
-            
-
-    }
+        }
 }
 
