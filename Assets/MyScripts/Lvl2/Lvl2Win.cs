@@ -13,12 +13,7 @@ public class Lvl2Win : MonoBehaviour {
     private bool SCIENCIST_ENTER = false;
 
     private const string NEXT_SCENE = "Menu";
-
-
-    void Start () {
-	
-	}
-
+    
     void Update()
     {
         if (MAYOMA_ENTER && CATWOMAN_ENTER && SCIENCIST_ENTER)
@@ -30,14 +25,6 @@ public class Lvl2Win : MonoBehaviour {
                 Cursor.visible = true;
             }
         }
-        if (Input.GetKeyDown(KeyCode.RightShift))
-        {
-            Cursor.visible = true;
-            GameObject minigame = GameObject.Find("Minigame");
-            Destroy(minigame);
-            SceneManager.LoadScene(NEXT_SCENE);
-        }
-
     }
 
     void OnTriggerStay(Collider other)

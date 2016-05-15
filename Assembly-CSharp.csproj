@@ -45,8 +45,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\AlarmMovement.cs" />
-     <Compile Include="Assets\LaserAnimation1.cs" />
      <Compile Include="Assets\MyAssets\MazeGenerator\Scripts\Cell.cs" />
      <Compile Include="Assets\MyAssets\MazeGenerator\Scripts\MazeGenerator.cs" />
      <Compile Include="Assets\MyAssets\MazeGenerator\Scripts\drag.cs" />
@@ -68,18 +66,23 @@
      <Compile Include="Assets\MyScripts\Lvl1\Hack.cs" />
      <Compile Include="Assets\MyScripts\Lvl1\Lvl1Win.cs" />
      <Compile Include="Assets\MyScripts\Lvl1\StartGame.cs" />
+     <Compile Include="Assets\MyScripts\Lvl2\AlarmMovement.cs" />
      <Compile Include="Assets\MyScripts\Lvl2\DisableLaserLights.cs" />
      <Compile Include="Assets\MyScripts\Lvl2\Door1AutoOpen.cs" />
      <Compile Include="Assets\MyScripts\Lvl2\DoorFromFloor.cs" />
+     <Compile Include="Assets\MyScripts\Lvl2\DoorLightChange.cs" />
      <Compile Include="Assets\MyScripts\Lvl2\FirstMiniGame.cs" />
      <Compile Include="Assets\MyScripts\Lvl2\FloorStand.cs" />
+     <Compile Include="Assets\MyScripts\Lvl2\LaserAnimation1.cs" />
      <Compile Include="Assets\MyScripts\Lvl2\LaserCollision.cs" />
      <Compile Include="Assets\MyScripts\Lvl2\LaserOff.cs" />
+     <Compile Include="Assets\MyScripts\Lvl2\LaserVerticalCollision.cs" />
      <Compile Include="Assets\MyScripts\Lvl2\Lvl2Win.cs" />
      <Compile Include="Assets\MyScripts\Lvl2\SetLastDoor.cs" />
+     <Compile Include="Assets\MyScripts\Lvl2\TrapControl.cs" />
+     <Compile Include="Assets\MyScripts\Lvl2\laserScript.cs" />
      <Compile Include="Assets\MyScripts\TriggersStript\VentilationTrigger.cs" />
      <Compile Include="Assets\MyScripts\WowCamera.cs" />
-     <Compile Include="Assets\laserScript.cs" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
  <Reference Include="UnityEngine.UI">

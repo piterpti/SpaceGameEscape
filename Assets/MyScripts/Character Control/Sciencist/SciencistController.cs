@@ -16,6 +16,9 @@ public class SciencistController : MonoBehaviour
     public Transform target;
     Animator m_Animator;
 
+    [SerializeField]
+    public bool navEnabled = false; // added By piter -- delte later
+
     private void Start()
     {
         m_Animator = GetComponent<Animator>();
@@ -82,20 +85,21 @@ public class SciencistController : MonoBehaviour
         }
         else
         {
-            //bot
-            agent.enabled = true;
-            agent.SetDestination(target.position);
-            float distance = Vector3.Distance(target.transform.position, this.transform.position);
-            if (distance > 4f)
-            {
-                m_Animator.SetFloat("Forward", 0.7f, 0.1f, Time.deltaTime);
-                //m_Animator.SetFloat("Turn", 0.7f, 0.1f, Time.deltaTime);
+            if (navEnabled)
+            {//bot
+                agent.enabled = true;
+                agent.SetDestination(target.position);
+                float distance = Vector3.Distance(target.transform.position, this.transform.position);
+                if (distance > 4f)
+                {
+                    m_Animator.SetFloat("Forward", 0.7f, 0.1f, Time.deltaTime);
+                    //m_Animator.SetFloat("Turn", 0.7f, 0.1f, Time.deltaTime);
+                }
+                if (distance <= 3.5f)
+                {
+                    m_Animator.SetFloat("Forward", 0, 0, Time.deltaTime);
+                }
             }
-            if (distance <= 3.5f)
-            {
-                m_Animator.SetFloat("Forward", 0, 0, Time.deltaTime);
-            }
-
 
         }
     }

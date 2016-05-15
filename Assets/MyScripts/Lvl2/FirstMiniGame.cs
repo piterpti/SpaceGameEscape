@@ -11,6 +11,8 @@ public class FirstMiniGame : MonoBehaviour {
 
     private Animation doorAnimation;
 
+    private bool displayText = true;
+
 
     private const string HIT_F_TO_INTERACT = "Wciśnij F, aby zhackować";
 
@@ -26,11 +28,25 @@ public class FirstMiniGame : MonoBehaviour {
     {
         if (other.gameObject.name.Equals(Constants.CHARACTER_SCIENTIST))
         {
-            interactionText.text = HIT_F_TO_INTERACT;
-            if(Input.GetKeyDown(KeyCode.F))
+            if (other.gameObject == ControllerSetup.CURRENT_CHARACTER)
+            {
+                interactionText.text = HIT_F_TO_INTERACT;
+                displayText = true;
+            }
+            else
+            {
+                if(displayText)
+                {
+                    interactionText.text = null;
+                    displayText = false;
+                }
+
+            }
+            if(Input.GetKeyDown(KeyCode.F) && other.gameObject == ControllerSetup.CURRENT_CHARACTER)
             {
                 doorAnimation.Play();
                 interactionText.text = null;
+                ChangeDoorLights();
                 Destroy(GetComponent<FirstMiniGame>());
             }
         }
@@ -39,5 +55,19 @@ public class FirstMiniGame : MonoBehaviour {
     void OnTriggerExit()
     {
         interactionText.text = null;
+    }
+
+    void ChangeDoorLights()
+    {
+        GameObject[] lights = GameObject.FindGameObjectsWithTag("DoorLight");
+        foreach(GameObject light in lights)
+        {
+            light.GetComponent<Light>().color = Color.green;
+        }
+        GameObject[] materials = GameObject.FindGameObjectsWithTag("DoorLamp");
+        foreach(GameObject material in materials)
+        {
+            material.GetComponent<Renderer>().material.color = Color.green;
+        }
     }
 }

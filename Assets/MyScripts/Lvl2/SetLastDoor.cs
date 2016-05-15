@@ -17,8 +17,20 @@ public class SetLastDoor : MonoBehaviour {
 	}
 	
 	void Update () {
-	
-	}
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            doorsToOpen.GetComponent<DoorFromFloor>().isOpenPernamently = true;
+            interactionText.text = null;
+
+            GameObject floor = GameObject.Find("FloorToAnim");
+            Animation animFloor = floor.GetComponent<Animation>();
+            animFloor.Play();
+
+            doorsToOpen.GetComponent<DoorLightChange>().ChangeLights();
+
+            Destroy(GetComponent<SetLastDoor>());
+        }
+    }
 
     void OnTriggerStay()
     {
@@ -32,6 +44,8 @@ public class SetLastDoor : MonoBehaviour {
             GameObject floor = GameObject.Find("FloorToAnim");
             Animation animFloor = floor.GetComponent<Animation>();
             animFloor.Play();
+
+            doorsToOpen.GetComponent<DoorLightChange>().ChangeLights();
 
             Destroy(GetComponent<SetLastDoor>());
         }

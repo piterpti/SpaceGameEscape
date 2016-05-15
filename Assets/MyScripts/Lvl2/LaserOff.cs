@@ -10,6 +10,7 @@ public class LaserOff : MonoBehaviour {
 
     private bool isLaserDestroyed;
     private const string LASER_OFF_TEXT = "F, aby wyłączyć lasery";
+    private bool displayText = true;
 
 	void Start () {
         
@@ -19,10 +20,22 @@ public class LaserOff : MonoBehaviour {
 	    
 	}
 
-    void OnTriggerStay()
+    void OnTriggerStay(Collider other)
     {
-        interactionText.text = LASER_OFF_TEXT;
-        if (Input.GetKeyDown(KeyCode.F))
+        if (other.gameObject == ControllerSetup.CURRENT_CHARACTER)
+        {
+            interactionText.text = LASER_OFF_TEXT;
+        }
+        else
+        {
+            if(displayText)
+            {
+                interactionText.text = null;
+                displayText = false;
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.F) && other.gameObject == ControllerSetup.CURRENT_CHARACTER)
         {
             GameObject[] lasers = GameObject.FindGameObjectsWithTag("Laser");
             foreach(GameObject laser in lasers)
