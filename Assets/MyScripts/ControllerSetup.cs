@@ -8,19 +8,29 @@ public class ControllerSetup : MonoBehaviour
     [SerializeField]
     private Text currentCharacterText;
     [SerializeField]
-    private GameObject character_mayoma;
+    private Text followText;
     [SerializeField]
-    private GameObject character_sciencist;
+    private  GameObject character_mayoma;
+    private static GameObject character_mayoma_b;
     [SerializeField]
-    private GameObject character_catwoman;
+    private  GameObject character_sciencist;
+    private static GameObject character_sciencist_b;
+    [SerializeField]
+    private  GameObject character_catwoman;
+    private static GameObject character_catwoman_b;
     [SerializeField]
     private WowCamera wowCamera;
 
     public static GameObject CURRENT_CHARACTER;
     private static bool character_change_available;
 
+    
+
     void Start()
     {
+        character_mayoma_b = character_mayoma;
+        character_sciencist_b = character_sciencist;
+        character_catwoman_b = character_catwoman;
         character_change_available = true;
         wowCamera.target = character_sciencist.transform;
         CURRENT_CHARACTER = character_sciencist;
@@ -33,6 +43,7 @@ public class ControllerSetup : MonoBehaviour
         DisableCharacterControl(character_mayoma);
         DisableCharacterControl(character_catwoman);
         currentCharacterText.text = "Character: " + Constants.CHARACTER_SCIENTIST;
+        followText.text = "Follow: ON";
     }
 
     void Update()
@@ -41,7 +52,11 @@ public class ControllerSetup : MonoBehaviour
         {
             GetInput();
         }
-        
+        if (character_sciencist_b.GetComponent<SciencistController>().m_folow_main_character)
+            followText.text = "Follow: ON";
+        else
+            followText.text = "Follow: OFF";
+
     }
 
     void GetInput()
@@ -82,6 +97,12 @@ public class ControllerSetup : MonoBehaviour
             character_mayoma.GetComponent<MayomaController>().target = CURRENT_CHARACTER.transform;
             character_sciencist.GetComponent<SciencistController>().target = CURRENT_CHARACTER.transform;
         }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            DisableEnableFollowCharacter();
+
+        }
+
     }
 
     void DisableCharacterControl(GameObject character)
@@ -151,5 +172,12 @@ public class ControllerSetup : MonoBehaviour
     public static void DisableCharacterChange()
     {
         character_change_available = false;
+    }
+    public static void DisableEnableFollowCharacter()
+    {
+        character_catwoman_b.GetComponent<CatwomanController>().m_folow_main_character = !character_catwoman_b.GetComponent<CatwomanController>().m_folow_main_character;
+        character_mayoma_b.GetComponent<MayomaController>().m_folow_main_character = !character_mayoma_b.GetComponent<MayomaController>().m_folow_main_character;
+        character_sciencist_b.GetComponent<SciencistController>().m_folow_main_character = !character_sciencist_b.GetComponent<SciencistController>().m_folow_main_character;
+
     }
 }

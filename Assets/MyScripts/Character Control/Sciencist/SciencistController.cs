@@ -10,7 +10,7 @@ public class SciencistController : MonoBehaviour
     private Vector3 m_CamForward;             // The current forward direction of the camera
     private Vector3 m_Move;
     private bool m_Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
-    //
+    public bool m_folow_main_character = true;
     public bool m_manual = false;
     public NavMeshAgent agent;
     public Transform target;
@@ -82,20 +82,26 @@ public class SciencistController : MonoBehaviour
         }
         else
         {
-            //bot
-            agent.enabled = true;
-            agent.SetDestination(target.position);
-            float distance = Vector3.Distance(target.transform.position, this.transform.position);
-            if (distance > 4f)
+            if (m_folow_main_character)
             {
-                m_Animator.SetFloat("Forward", 0.7f, 0.1f, Time.deltaTime);
-                //m_Animator.SetFloat("Turn", 0.7f, 0.1f, Time.deltaTime);
+                //bot folow main character
+                agent.enabled = true;
+                agent.SetDestination(target.position);
+                float distance = Vector3.Distance(target.transform.position, this.transform.position);
+                if (distance > 4f)
+                {
+                    m_Animator.SetFloat("Forward", 0.7f, 0.1f, Time.deltaTime);
+                    //m_Animator.SetFloat("Turn", 0.7f, 0.1f, Time.deltaTime);
+                }
+                if (distance <= 3.5f)
+                {
+                    m_Animator.SetFloat("Forward", 0, 0, Time.deltaTime);
+                }
             }
-            if (distance <= 3.5f)
+            else
             {
-                m_Animator.SetFloat("Forward", 0, 0, Time.deltaTime);
+                agent.enabled = false;
             }
-
 
         }
     }

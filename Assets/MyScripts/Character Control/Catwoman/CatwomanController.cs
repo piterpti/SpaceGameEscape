@@ -11,6 +11,7 @@ public class CatwomanController : MonoBehaviour
     private Vector3 m_Move;
     private bool m_Jump;
     public bool m_manual = false;
+    public bool m_folow_main_character = true;
     public NavMeshAgent agent;
     public Transform target;
     Animator m_Animator;
@@ -80,19 +81,26 @@ public class CatwomanController : MonoBehaviour
         }
         else
         {
-            //bot
-            agent.enabled = true;
-            agent.SetDestination(target.position);
-            float distance = Vector3.Distance(target.transform.position, this.transform.position);
-            if (distance > 4f)
-            {
-                m_Animator.SetFloat("Forward", 0.7f, 0.1f, Time.deltaTime);
-                //m_Animator.SetFloat("Turn", 0.7f, 0.1f, Time.deltaTime);
+            if (m_folow_main_character) {
+                //bot folow main character
+                agent.enabled = true;
+                agent.SetDestination(target.position);
+                float distance = Vector3.Distance(target.transform.position, this.transform.position);
+                if (distance > 4f)
+                {
+                    m_Animator.SetFloat("Forward", 0.7f, 0.1f, Time.deltaTime);
+                    //m_Animator.SetFloat("Turn", 0.7f, 0.1f, Time.deltaTime);
+                }
+                if (distance <= 3.5f)
+                {
+                    m_Animator.SetFloat("Forward", 0, 0, Time.deltaTime);
+                }
             }
-            if (distance <= 3.5f)
+            else
             {
-                m_Animator.SetFloat("Forward", 0, 0, Time.deltaTime);
+                agent.enabled = false;
             }
+
 
         }
     }

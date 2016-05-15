@@ -44,6 +44,7 @@ public class GameControl : MonoBehaviour {
             helpCanvas.enabled = false;
         }
 
+
     }
 
     public void openMiniGame()
