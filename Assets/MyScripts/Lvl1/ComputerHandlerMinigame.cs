@@ -15,8 +15,9 @@ public class ComputerHandlerMinigame : MonoBehaviour {
     [SerializeField]
     private string textToDisplay = "F - interakcja";
     [SerializeField]
-
     public GameControl state;
+     
+   
     private bool doorHacked = false;
     private bool isDoorOpen = false;
     private Animation doorAnimation;
@@ -38,6 +39,7 @@ public class ComputerHandlerMinigame : MonoBehaviour {
                     if (!doorHacked)
                     {
                         state.openMiniGame();
+                        GetComponent<AudioSource>().Play();
                     }
                     else
                     {
@@ -86,7 +88,6 @@ public class ComputerHandlerMinigame : MonoBehaviour {
             doorAnimation.Play();
             textToDisplay = "F aby otworzyć";
         }
-        
     }
 
     public void changeDoorHacked()
