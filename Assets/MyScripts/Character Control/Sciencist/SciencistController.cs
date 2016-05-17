@@ -17,7 +17,7 @@ public class SciencistController : MonoBehaviour
     Animator m_Animator;
 
     [SerializeField]
-    public bool navEnabled = false; // added By piter -- delte later
+    public bool navEnabled = true; // added By piter -- delte later
 
     private void Start()
     {
