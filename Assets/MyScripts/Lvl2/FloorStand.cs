@@ -21,7 +21,9 @@ public class FloorStand : MonoBehaviour {
             otherName == Constants.CHARACTER_SCIENTIST)
         {
             isOn = true;
-            GetComponent<Renderer>().material.color = Color.green;
+            GameObject floor = GameObject.Find("FloorToAnim2");
+            Animation animFloor = floor.GetComponent<Animation>();
+            animFloor.Play();
         } 
     }
     
