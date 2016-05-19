@@ -1,11 +1,11 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceGameEscape.CSharp.Plugins", "SpaceGameEscape.CSharp.Plugins.csproj", "{619CF443-A2B5-0793-2D63-50BF0FB53C4D}"
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{C4572CE3-7AC1-6646-2DF6-1948BE9A73C8}") = "SpaceGameEscape", "Assembly-CSharp-firstpass.csproj", "{C0E75370-7F55-23F9-862E-A5D21C961308}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceGameEscape.CSharp", "SpaceGameEscape.CSharp.csproj", "{D42B56D6-AF86-D3AB-930C-F5C9DE447551}"
+Project("{C4572CE3-7AC1-6646-2DF6-1948BE9A73C8}") = "SpaceGameEscape", "Assembly-CSharp.csproj", "{D7CD33DB-5C64-CAAE-F7A8-5A3F5E34EDDA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceGameEscape.CSharp.Editor", "SpaceGameEscape.CSharp.Editor.csproj", "{84E3B2FB-B090-A4B7-BAA5-3B1461692FA3}"
+Project("{C4572CE3-7AC1-6646-2DF6-1948BE9A73C8}") = "SpaceGameEscape", "Assembly-CSharp-Editor.csproj", "{E56F030F-5A7A-EBBA-0E38-03D59A19F0F5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,20 +13,23 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{619CF443-A2B5-0793-2D63-50BF0FB53C4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{619CF443-A2B5-0793-2D63-50BF0FB53C4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{619CF443-A2B5-0793-2D63-50BF0FB53C4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{619CF443-A2B5-0793-2D63-50BF0FB53C4D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D42B56D6-AF86-D3AB-930C-F5C9DE447551}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D42B56D6-AF86-D3AB-930C-F5C9DE447551}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D42B56D6-AF86-D3AB-930C-F5C9DE447551}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D42B56D6-AF86-D3AB-930C-F5C9DE447551}.Release|Any CPU.Build.0 = Release|Any CPU
-		{84E3B2FB-B090-A4B7-BAA5-3B1461692FA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{84E3B2FB-B090-A4B7-BAA5-3B1461692FA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{84E3B2FB-B090-A4B7-BAA5-3B1461692FA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{84E3B2FB-B090-A4B7-BAA5-3B1461692FA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0E75370-7F55-23F9-862E-A5D21C961308}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0E75370-7F55-23F9-862E-A5D21C961308}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0E75370-7F55-23F9-862E-A5D21C961308}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0E75370-7F55-23F9-862E-A5D21C961308}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7CD33DB-5C64-CAAE-F7A8-5A3F5E34EDDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7CD33DB-5C64-CAAE-F7A8-5A3F5E34EDDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7CD33DB-5C64-CAAE-F7A8-5A3F5E34EDDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7CD33DB-5C64-CAAE-F7A8-5A3F5E34EDDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E56F030F-5A7A-EBBA-0E38-03D59A19F0F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E56F030F-5A7A-EBBA-0E38-03D59A19F0F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E56F030F-5A7A-EBBA-0E38-03D59A19F0F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E56F030F-5A7A-EBBA-0E38-03D59A19F0F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal
