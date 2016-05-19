@@ -53,7 +53,7 @@ public class DoorFromFloor : MonoBehaviour {
     {
         if (!doorOpen)
         {
-
+            GetComponent<DoorLightChange>().ChangeLights(Color.green);
             doorAnimation[ANIMATION_NAME].speed = 1;
             doorAnimation.Play();
             doorOpen = true;
@@ -64,6 +64,7 @@ public class DoorFromFloor : MonoBehaviour {
     {
         if (doorOpen)
         {
+            GetComponent<DoorLightChange>().ChangeLights(Color.red);
             doorAnimation[ANIMATION_NAME].time = doorAnimation[ANIMATION_NAME].length;
             doorAnimation[ANIMATION_NAME].speed = -1;
             doorAnimation.Play();

@@ -10,29 +10,16 @@ public class SetLastDoor : MonoBehaviour {
     [SerializeField]
     private GameObject doorsToOpen;
 
+    [SerializeField]
+    private GameObject[] enemyLasres;
+
     private const string F_TO_OPEN = "F - interakcja";
 
 	void Start () {
 	    
 	}
 	
-	void Update () {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            doorsToOpen.GetComponent<DoorFromFloor>().isOpenPernamently = true;
-            interactionText.text = null;
-
-            GameObject floor = GameObject.Find("FloorToAnim");
-            Animation animFloor = floor.GetComponent<Animation>();
-            animFloor.Play();
-
-            doorsToOpen.GetComponent<DoorLightChange>().ChangeLights();
-
-            Destroy(GetComponent<SetLastDoor>());
-        }
-    }
-
-    void OnTriggerStay()
+	void OnTriggerStay()
     {
         interactionText.text = F_TO_OPEN;
 
@@ -45,9 +32,15 @@ public class SetLastDoor : MonoBehaviour {
             Animation animFloor = floor.GetComponent<Animation>();
             animFloor.Play();
 
-            doorsToOpen.GetComponent<DoorLightChange>().ChangeLights();
+            doorsToOpen.GetComponent<DoorLightChange>().ChangeLights(Color.green);
+
+            foreach(GameObject g in enemyLasres)
+            {
+                Destroy(g);
+            }
 
             Destroy(GetComponent<SetLastDoor>());
+            
         }
     }
 

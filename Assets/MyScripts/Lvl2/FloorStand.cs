@@ -23,6 +23,7 @@ public class FloorStand : MonoBehaviour {
             isOn = true;
             GameObject floor = GameObject.Find("FloorToAnim2");
             Animation animFloor = floor.GetComponent<Animation>();
+            GetComponent<Renderer>().material.color = Color.green;
             animFloor.Play();
         } 
     }

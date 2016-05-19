@@ -8,15 +8,15 @@ public class DoorLightChange : MonoBehaviour {
     [SerializeField]
     private Light[] lights;
 
-	public void ChangeLights()
+	public void ChangeLights(Color c)
     {
         foreach(GameObject lamp in lamps)
         {
-            lamp.GetComponent<Renderer>().material.color = Color.green;
+            lamp.GetComponent<Renderer>().material.color = c;
         }
         foreach(Light light in lights)
         {
-            light.color = Color.green;
+            light.color = c;
         }
     }
 }
