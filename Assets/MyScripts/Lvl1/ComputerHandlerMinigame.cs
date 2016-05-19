@@ -15,7 +15,10 @@ public class ComputerHandlerMinigame : MonoBehaviour {
     [SerializeField]
     private string textToDisplay = "F - interakcja";
     [SerializeField]
+    private AudioClip doorSound;
+    [SerializeField]
     public GameControl state;
+
      
    
     private bool doorHacked = false;
