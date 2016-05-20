@@ -42,8 +42,8 @@ public class ControllerSetup : MonoBehaviour
         EnableCharacterControl(character_sciencist);
         DisableCharacterControl(character_mayoma);
         DisableCharacterControl(character_catwoman);
-        currentCharacterText.text = "Character: " + Constants.CHARACTER_SCIENTIST;
-        followText.text = "Follow: ON";
+        currentCharacterText.text = "Postać: " + Constants.CHARACTER_SCIENTIST;
+        followText.text = "Podążanie: ON";
     }
 
     void Update()
@@ -53,9 +53,9 @@ public class ControllerSetup : MonoBehaviour
             GetInput();
         }
         if (character_sciencist_b.GetComponent<SciencistController>().m_folow_main_character)
-            followText.text = "Follow: ON";
+            followText.text = "Podążanie: ON";
         else
-            followText.text = "Follow: OFF";
+            followText.text = "Podążanie: OFF";
 
     }
 
@@ -68,7 +68,7 @@ public class ControllerSetup : MonoBehaviour
             EnableCharacterControl(character_mayoma);
             DisableCharacterControl(character_sciencist);
             DisableCharacterControl(character_catwoman);
-            currentCharacterText.text = "Character: " + Constants.CHARACTER_MAYOMA;
+            currentCharacterText.text = "Postać: " + Constants.CHARACTER_MAYOMA;
             //set follow target to bot
             character_catwoman.GetComponent<CatwomanController>().target = CURRENT_CHARACTER.transform;
             character_sciencist.GetComponent<SciencistController>().target = CURRENT_CHARACTER.transform;
@@ -80,7 +80,7 @@ public class ControllerSetup : MonoBehaviour
             EnableCharacterControl(character_sciencist);
             DisableCharacterControl(character_mayoma);
             DisableCharacterControl(character_catwoman);
-            currentCharacterText.text = "Character: " + Constants.CHARACTER_SCIENTIST;
+            currentCharacterText.text = "Postać: " + Constants.CHARACTER_SCIENTIST;
             //set follow target to bot
             character_mayoma.GetComponent<MayomaController>().target = CURRENT_CHARACTER.transform;
             character_catwoman.GetComponent<CatwomanController>().target = CURRENT_CHARACTER.transform;
@@ -92,7 +92,7 @@ public class ControllerSetup : MonoBehaviour
             EnableCharacterControl(character_catwoman);
             DisableCharacterControl(character_mayoma);
             DisableCharacterControl(character_sciencist);
-            currentCharacterText.text = "Character: " + Constants.CHARACTER_CATWOMAN;
+            currentCharacterText.text = "Postać: " + Constants.CHARACTER_CATWOMAN;
             //set follow target to bot
             character_mayoma.GetComponent<MayomaController>().target = CURRENT_CHARACTER.transform;
             character_sciencist.GetComponent<SciencistController>().target = CURRENT_CHARACTER.transform;

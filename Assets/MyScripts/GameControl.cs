@@ -10,6 +10,8 @@ public class GameControl : MonoBehaviour {
     [SerializeField]
     private ComputerHandlerMinigame minigame;
     [SerializeField]
+    private FirstMiniGame minigamelvl2;
+    [SerializeField]
     private Camera mainCamera;
     [SerializeField]
     private Text characterText;
@@ -66,7 +68,14 @@ public class GameControl : MonoBehaviour {
         controllerSetup.EnableCurrentCharacter();
         if (status)
         {
-            minigame.changeDoorHacked();
+            if (minigame != null)
+            {
+                minigame.changeDoorHacked();
+            }
+            else if(minigamelvl2 != null)
+            {
+                minigamelvl2.ChangeHacked();
+            }
         }
         characterText.enabled = true;
         interactionText.enabled = true;
