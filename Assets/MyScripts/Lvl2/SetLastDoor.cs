@@ -33,6 +33,7 @@ public class SetLastDoor : MonoBehaviour {
             animFloor.Play();
 
             doorsToOpen.GetComponent<DoorLightChange>().ChangeLights(Color.green);
+            GetComponent<AudioSource>().Play();
 
             foreach(GameObject g in enemyLasres)
             {

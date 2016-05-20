@@ -6,9 +6,12 @@ public class AutoDoorOpen : MonoBehaviour {
     private Animation doorAnimation;
     private bool doorOpen = false;
 
+    private AudioSource doorSound;
+
     void Start()
     {
         doorAnimation = GetComponent<Animation>();
+        doorSound = GetComponent<AudioSource>();
     }
 
     
@@ -36,6 +39,7 @@ public class AutoDoorOpen : MonoBehaviour {
             doorAnimation["doorAutoOpen"].speed = 1;
             doorAnimation.Play();
             doorOpen = true;
+            doorSound.Play();
         }
     }
 
@@ -47,6 +51,7 @@ public class AutoDoorOpen : MonoBehaviour {
             doorAnimation["doorAutoOpen"].speed = -1;
             doorAnimation.Play();
             doorOpen = false;
+            doorSound.Play();
         }
     }
 }

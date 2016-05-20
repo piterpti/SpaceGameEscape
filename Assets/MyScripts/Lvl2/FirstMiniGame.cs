@@ -47,6 +47,7 @@ public class FirstMiniGame : MonoBehaviour {
                 doorAnimation.Play();
                 interactionText.text = null;
                 ChangeDoorLights();
+                doorToOpen.GetComponent<AudioSource>();
                 Destroy(GetComponent<FirstMiniGame>());
             }
         }

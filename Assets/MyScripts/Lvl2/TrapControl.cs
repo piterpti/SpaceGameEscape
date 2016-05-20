@@ -11,5 +11,6 @@ public class TrapControl : MonoBehaviour {
     void OnTriggerEnter(Collider other)
     {
         other.transform.position = respawnPoint.position;
+        GameObject.Find("Characters").GetComponent<AudioSource>().Play();
     }
 }

@@ -9,9 +9,13 @@ public class LaserCollision : MonoBehaviour {
     private GameObject SCIENCIST;
     [SerializeField]
     private GameObject CATWOMAN;
+    [SerializeField]
+    private Transform respawnPoint;
+
+    private AudioSource fail;
 
     void Start () {
-	
+        fail = GameObject.Find("Characters").GetComponent<AudioSource>();
 	}
 	
 	void Update () {
@@ -24,9 +28,10 @@ public class LaserCollision : MonoBehaviour {
             other.gameObject == SCIENCIST ||
             other.gameObject == CATWOMAN)
         {
-            MAYOMA.transform.position = new Vector3(-8f, 0.85f, 3.4f);
-            SCIENCIST.transform.position = new Vector3(-8.26f, 0.85f, 4.77f);
-            CATWOMAN.transform.position = new Vector3(-8.17f, 0.85f, 6.13f);
+            MAYOMA.transform.position = respawnPoint.position + (new Vector3(0f, 0f, 2f));
+            SCIENCIST.transform.position = respawnPoint.position;
+            CATWOMAN.transform.position = respawnPoint.position + (new Vector3(0f, 0f, -2f));
+            fail.Play();
         }
     }
 }

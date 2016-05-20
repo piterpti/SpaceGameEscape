@@ -57,6 +57,7 @@ public class DoorFromFloor : MonoBehaviour {
             doorAnimation[ANIMATION_NAME].speed = 1;
             doorAnimation.Play();
             doorOpen = true;
+            GetComponent<AudioSource>().Play();
         }
     }
 
@@ -69,6 +70,7 @@ public class DoorFromFloor : MonoBehaviour {
             doorAnimation[ANIMATION_NAME].speed = -1;
             doorAnimation.Play();
             doorOpen = false;
+            GetComponent<AudioSource>().Play();
         }
     }
 }

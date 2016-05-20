@@ -7,7 +7,7 @@ public class LaserOff : MonoBehaviour {
     
     [SerializeField]
     private Text interactionText;
-
+    
     private bool isLaserDestroyed;
     private const string LASER_OFF_TEXT = "F, aby wyłączyć lasery";
     private bool displayText = true;
@@ -46,12 +46,14 @@ public class LaserOff : MonoBehaviour {
                     anim.enabled = false;
                 }
                 laser.GetComponent<DisableLaserLights>().enabled = true;
+                laser.GetComponent<AudioSource>().enabled = false;
                 Destroy(laser.GetComponent<LaserCollision>());
                 
             }
 
             GameObject laserHorizontal = GameObject.Find("LaserVertical");
             laserHorizontal.GetComponent<Animator>().enabled = false;
+            GetComponent<AudioSource>().Play();
 
             Destroy(GetComponent<LaserOff>());
             interactionText.text = null;

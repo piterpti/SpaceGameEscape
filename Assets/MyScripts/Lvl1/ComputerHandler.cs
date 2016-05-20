@@ -18,13 +18,14 @@ public class ComputerHandler : MonoBehaviour {
 
     public GameControl state;
 
-
+    private AudioSource doorSound;
     private Animation doorAnimation;
     private bool isDoorOpen = false;
 
 	void Start ()
     {
         doorAnimation = doors.GetComponent<Animation>();
+        doorSound = doors.GetComponent<AudioSource>();
 	}
 	
 	void Update ()
@@ -73,6 +74,7 @@ public class ComputerHandler : MonoBehaviour {
             doorAnimation["door1Open"].speed = 1;
             doorAnimation.Play();
             textToDisplay = "F aby zamknąć";
+            doorSound.Play();
         }
     }
 
@@ -85,6 +87,7 @@ public class ComputerHandler : MonoBehaviour {
             doorAnimation["door1Open"].speed = -1;
             doorAnimation.Play();
             textToDisplay = "F aby otworzyć";
+            doorSound.Play();
         }
         
     }

@@ -14,13 +14,12 @@ public class ComputerHandlerMinigame : MonoBehaviour {
     private GameObject doors;
     [SerializeField]
     private string textToDisplay = "F - interakcja";
-    [SerializeField]
-    private AudioClip doorSound;
-    [SerializeField]
+    [SerializeField]    
     public GameControl state;
 
-     
-   
+
+
+    private AudioSource doorSound;
     private bool doorHacked = false;
     private bool isDoorOpen = false;
     private Animation doorAnimation;
@@ -28,6 +27,7 @@ public class ComputerHandlerMinigame : MonoBehaviour {
 	void Start ()
     {
         doorAnimation = doors.GetComponent<Animation>();
+        doorSound = doors.GetComponent<AudioSource>();
 	}
 
     void OnTriggerStay(Collider other)
@@ -78,6 +78,7 @@ public class ComputerHandlerMinigame : MonoBehaviour {
             doorAnimation["door1Open"].speed = 1;
             doorAnimation.Play();
             textToDisplay = "F aby zamknąć";
+            doorSound.Play();
         }
     }
 
@@ -90,6 +91,7 @@ public class ComputerHandlerMinigame : MonoBehaviour {
             doorAnimation["door1Open"].speed = -1;
             doorAnimation.Play();
             textToDisplay = "F aby otworzyć";
+            doorSound.Play();
         }
     }
 

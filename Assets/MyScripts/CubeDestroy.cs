@@ -9,6 +9,7 @@ public class CubeDestroy : MonoBehaviour {
         {
             GetComponent<BoxCollider>().enabled = false;
             GetComponent<Animator>().enabled = true;
+            GetComponent<AudioSource>().Play();
             Destroy(gameObject, 2f);
         }
     }
