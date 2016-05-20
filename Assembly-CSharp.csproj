@@ -81,10 +81,13 @@
      <Compile Include="Assets\MyScripts\Lvl2\LaserOff.cs" />
      <Compile Include="Assets\MyScripts\Lvl2\LaserVerticalCollision.cs" />
      <Compile Include="Assets\MyScripts\Lvl2\Lvl2Win.cs" />
+     <Compile Include="Assets\MyScripts\Lvl2\RespawnOnButton.cs" />
      <Compile Include="Assets\MyScripts\Lvl2\Respawner.cs" />
      <Compile Include="Assets\MyScripts\Lvl2\SetLastDoor.cs" />
      <Compile Include="Assets\MyScripts\Lvl2\TrapControl.cs" />
      <Compile Include="Assets\MyScripts\Lvl2\laserScript.cs" />
+     <Compile Include="Assets\MyScripts\TriggersStript\NavMeshDisableRoom2.cs" />
+     <Compile Include="Assets\MyScripts\TriggersStript\NavMeshEnableRoom2.cs" />
      <Compile Include="Assets\MyScripts\TriggersStript\VentilationTrigger.cs" />
      <Compile Include="Assets\MyScripts\WowCamera.cs" />
      <None Include="Assets\Lava_Flowing_Shader\Shaders\Unlit_Lava_Simple.shader" />
