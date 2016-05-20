@@ -23,6 +23,7 @@ public class ControllerSetup : MonoBehaviour
 
     public static GameObject CURRENT_CHARACTER;
     private static bool character_change_available;
+    private static bool button_q;
 
     
 
@@ -44,9 +45,11 @@ public class ControllerSetup : MonoBehaviour
         DisableCharacterControl(character_catwoman);
         currentCharacterText.text = "Postać: " + Constants.CHARACTER_SCIENTIST;
         followText.text = "Podążanie: ON";
-    }
+        button_q = true ;
 
-    void Update()
+}
+
+void Update()
     {
         if (character_change_available)
         {
@@ -99,7 +102,8 @@ public class ControllerSetup : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            DisableEnableFollowCharacter();
+            if(button_q)
+                DisableEnableFollowCharacter();
 
         }
 
@@ -179,5 +183,25 @@ public class ControllerSetup : MonoBehaviour
         character_mayoma_b.GetComponent<MayomaController>().m_folow_main_character = !character_mayoma_b.GetComponent<MayomaController>().m_folow_main_character;
         character_sciencist_b.GetComponent<SciencistController>().m_folow_main_character = !character_sciencist_b.GetComponent<SciencistController>().m_folow_main_character;
 
+    }
+    public static void DisableFollorCharacter() {
+        character_catwoman_b.GetComponent<CatwomanController>().m_folow_main_character = false;
+        character_mayoma_b.GetComponent<MayomaController>().m_folow_main_character = false;
+        character_sciencist_b.GetComponent<SciencistController>().m_folow_main_character = false;
+
+    }
+    public static void EnableFollorCharacter() {
+        character_catwoman_b.GetComponent<CatwomanController>().m_folow_main_character = true;
+        character_mayoma_b.GetComponent<MayomaController>().m_folow_main_character = true;
+        character_sciencist_b.GetComponent<SciencistController>().m_folow_main_character = true;
+
+    }
+    public static void DisableButtonQ()
+    {
+        button_q = false;
+    }
+    public static void EnableButtonQ()
+    {
+        button_q = true;
     }
 }
