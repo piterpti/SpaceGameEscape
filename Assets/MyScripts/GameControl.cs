@@ -19,6 +19,8 @@ public class GameControl : MonoBehaviour {
     private Text interactionText;
     [SerializeField]
     private Canvas helpCanvas;
+    [SerializeField]
+    private Text followText; 
 
     private static ControllerSetup controllerSetup;
     private static WowCamera wowCamera;
@@ -57,6 +59,7 @@ public class GameControl : MonoBehaviour {
         mainCamera.transform.position = new Vector3(-0.09f, -0.47f, -11.5f);
         mainCamera.transform.rotation = Quaternion.identity;
         characterText.enabled = false;
+        followText.enabled = false;
         interactionText.enabled = false;
         Cursor.visible = true;
     }
@@ -79,6 +82,7 @@ public class GameControl : MonoBehaviour {
         }
         characterText.enabled = true;
         interactionText.enabled = true;
+        followText.enabled = true;
         Cursor.visible = false;
     }
 
