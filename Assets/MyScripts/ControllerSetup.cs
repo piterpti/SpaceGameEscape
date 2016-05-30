@@ -104,6 +104,9 @@ void Update()
         {
             if(button_q)
                 DisableEnableFollowCharacter();
+            character_mayoma.GetComponent<Animator>().SetFloat("Forward", 0, 0, Time.deltaTime);
+            character_sciencist.GetComponent<Animator>().SetFloat("Forward", 0, 0, Time.deltaTime);
+            character_catwoman.GetComponent<Animator>().SetFloat("Forward", 0, 0, Time.deltaTime);
 
         }
 
@@ -117,18 +120,21 @@ void Update()
             //character.GetComponent<MayomaCharacter>().enabled = false;
             character.GetComponent<MayomaController>().m_manual = false;
 
+
         }
         else if(character.gameObject.name.Equals(Constants.CHARACTER_SCIENTIST))
         {
             //character.GetComponent<SciencistController>().enabled = false;
             //character.GetComponent<SciencistCharacter>().enabled = false;
             character.GetComponent<SciencistController>().m_manual = false;
+
         }
         else if (character.gameObject.name.Equals(Constants.CHARACTER_CATWOMAN))
         {
             //character.GetComponent<CatwomanController>().enabled = false;
             //character.GetComponent<CatwomanCharacter>().enabled = false;
             character.GetComponent<CatwomanController>().m_manual = false;
+
         }
         character.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
         character.GetComponent<Animator>().SetFloat("Forward", 0, 0, Time.deltaTime);

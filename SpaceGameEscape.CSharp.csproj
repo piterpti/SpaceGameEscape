@@ -58,6 +58,12 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
@@ -105,6 +111,7 @@
     <Compile Include="Assets\MyScripts\Lvl2\LaserOff.cs" />
     <Compile Include="Assets\MyScripts\Lvl2\LaserVerticalCollision.cs" />
     <Compile Include="Assets\MyScripts\Lvl2\Lvl2Win.cs" />
+    <Compile Include="Assets\MyScripts\Lvl2\RespawnOnButton.cs" />
     <Compile Include="Assets\MyScripts\Lvl2\Respawner.cs" />
     <Compile Include="Assets\MyScripts\Lvl2\SetLastDoor.cs" />
     <Compile Include="Assets\MyScripts\Lvl2\TrapControl.cs" />

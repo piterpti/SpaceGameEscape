@@ -15,6 +15,8 @@ public class MayomaController : MonoBehaviour
     public NavMeshAgent agent;
     public Transform target;
     Animator m_Animator;
+    Animation animation_component;
+    private bool punch;
 
     [SerializeField]
     public bool navEnabled = true; // added By piter -- delte later
@@ -23,6 +25,7 @@ public class MayomaController : MonoBehaviour
     {
         m_Animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
+        animation_component = GetComponent<Animation>();
         // get the transform of the main camera
         if (Camera.main != null)
         {
@@ -47,6 +50,7 @@ public class MayomaController : MonoBehaviour
             {
                 m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
             }
+
         }
     }
 

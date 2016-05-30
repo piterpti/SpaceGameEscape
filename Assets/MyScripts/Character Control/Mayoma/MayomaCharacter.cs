@@ -85,6 +85,11 @@ public class MayomaCharacter : MonoBehaviour
         UpdateAnimator(move);
     }
 
+    public void Punch(bool punch)
+    {
+
+        m_Animator.SetBool("Punch", punch);
+    }
 
     void ScaleCapsuleForCrouching(bool crouch)
     {
@@ -160,6 +165,10 @@ public class MayomaCharacter : MonoBehaviour
             // don't use that while airborne
             m_Animator.speed = 1;
         }
+        if(m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Punch"))
+        {
+            m_Animator.SetBool("Punch", false);
+        }
     }
 
 
@@ -179,10 +188,11 @@ public class MayomaCharacter : MonoBehaviour
         if (jump && !crouch && m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Grounded"))
         {
             // jump!
-            m_Rigidbody.velocity = new Vector3(m_Rigidbody.velocity.x, m_JumpPower, m_Rigidbody.velocity.z);
-            m_IsGrounded = false;
-            m_Animator.applyRootMotion = false;
-            m_GroundCheckDistance = 0.1f;
+            // m_Rigidbody.velocity = new Vector3(m_Rigidbody.velocity.x, m_JumpPower, m_Rigidbody.velocity.z);
+            // m_IsGrounded = false;
+            //m_Animator.applyRootMotion = false;
+            //m_GroundCheckDistance = 0.1f;,
+            m_Animator.SetBool("Punch", true);
         }
     }
 
