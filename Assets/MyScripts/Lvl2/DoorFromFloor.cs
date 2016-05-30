@@ -19,7 +19,6 @@ public class DoorFromFloor : MonoBehaviour {
         if (isOpenPernamently)
         {
             DoorOpen();
-            Destroy(GetComponent<DoorFromFloor>());
         }
         else
         {
@@ -36,16 +35,8 @@ public class DoorFromFloor : MonoBehaviour {
             if (counter == 2)
             {
                 DoorOpen();
-            }
-            else
-            {
-                DoorClose();
-            }
-
-            if (Input.GetKeyDown(KeyCode.T))
-            {
-                DoorOpen();
-            }
+                isOpenPernamently = true;
+            }            
         }
 	}
 
