@@ -64,7 +64,10 @@
      <Compile Include="Assets\MyScripts\Lvl1\AutoDoorOpen.cs" />
      <Compile Include="Assets\MyScripts\Lvl1\ComputerHandler.cs" />
      <Compile Include="Assets\MyScripts\Lvl1\ComputerHandlerMinigame.cs" />
+     <Compile Include="Assets\MyScripts\Lvl1\FloorTrigger.cs" />
      <Compile Include="Assets\MyScripts\Lvl1\Hack.cs" />
+     <Compile Include="Assets\MyScripts\Lvl1\LastRoomObjective.cs" />
+     <Compile Include="Assets\MyScripts\Lvl1\Lvl1Hints.cs" />
      <Compile Include="Assets\MyScripts\Lvl1\Lvl1Win.cs" />
      <Compile Include="Assets\MyScripts\Lvl1\StartGame.cs" />
      <Compile Include="Assets\MyScripts\Lvl2\AlarmMovement.cs" />

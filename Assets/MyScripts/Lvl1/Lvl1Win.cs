@@ -18,7 +18,7 @@ public class Lvl1Win : MonoBehaviour {
     {
         if(MAYOMA_ENTER && CATWOMAN_ENTER && SCIENCIST_ENTER)
         {
-            interactionText.text = "Wciśnij F, aby przejśc dalej";
+            interactionText.text = "Press F, to next level";
             if(Input.GetKeyDown(KeyCode.F))
             {
                 SceneManager.LoadScene(NEXT_SCENE);

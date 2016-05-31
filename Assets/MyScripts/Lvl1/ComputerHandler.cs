@@ -13,7 +13,7 @@ public class ComputerHandler : MonoBehaviour {
     [SerializeField]
     private GameObject doors;
     [SerializeField]
-    private string textToDisplay = "F - interakcja";
+    private string textToDisplay = "F - interacion";
     [SerializeField]
 
     public GameControl state;
@@ -21,6 +21,7 @@ public class ComputerHandler : MonoBehaviour {
     private AudioSource doorSound;
     private Animation doorAnimation;
     private bool isDoorOpen = false;
+    private bool firstTime = true;
 
 	void Start ()
     {
@@ -73,8 +74,14 @@ public class ComputerHandler : MonoBehaviour {
             isDoorOpen = true;
             doorAnimation["door1Open"].speed = 1;
             doorAnimation.Play();
-            textToDisplay = "F aby zamknąć";
+            textToDisplay = "F to close";
             doorSound.Play();
+            if (firstTime)
+            {
+                Lvl1Hints hint = GameObject.Find(Constants.GAME_CONTROLLER).GetComponent<Lvl1Hints>();
+                hint.setText("Wait for friends!");
+                firstTime = false;
+            }
         }
     }
 
@@ -86,7 +93,7 @@ public class ComputerHandler : MonoBehaviour {
             doorAnimation["door1Open"].time = doorAnimation["door1Open"].length;
             doorAnimation["door1Open"].speed = -1;
             doorAnimation.Play();
-            textToDisplay = "F aby otworzyć";
+            textToDisplay = "F to open";
             doorSound.Play();
         }
         

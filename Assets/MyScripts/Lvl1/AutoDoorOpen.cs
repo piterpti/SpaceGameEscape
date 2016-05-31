@@ -5,6 +5,8 @@ public class AutoDoorOpen : MonoBehaviour {
         
     private Animation doorAnimation;
     private bool doorOpen = false;
+    private bool firstTime = false;
+    private bool temp = true;
 
     private AudioSource doorSound;
 
@@ -14,7 +16,15 @@ public class AutoDoorOpen : MonoBehaviour {
         doorSound = GetComponent<AudioSource>();
     }
 
-    
+    void Update()
+    {
+        if(firstTime && temp)
+        {
+            Lvl1Hints hint = GameObject.Find(Constants.GAME_CONTROLLER).GetComponent<Lvl1Hints>();
+            hint.setText("Try to destroy this chests");
+            temp = false;           
+        }
+    }
 
 	void OnTriggerStay(Collider other)
     {
@@ -23,7 +33,8 @@ public class AutoDoorOpen : MonoBehaviour {
             other.gameObject.name.Equals(Constants.CHARACTER_MAYOMA))
         {
             DoorOpen();
-        }       
+            firstTime = true;
+        }      
     }
 
     void OnTriggerExit()

@@ -13,19 +13,22 @@ public class ComputerHandlerMinigame : MonoBehaviour {
     [SerializeField]
     private GameObject doors;
     [SerializeField]
-    private string textToDisplay = "F - interakcja";
+    private string textToDisplay = "F - interaction";
     [SerializeField]    
     public GameControl state;
 
-
+    private Lvl1Hints hintToDisplay;
 
     private AudioSource doorSound;
     private bool doorHacked = false;
     private bool isDoorOpen = false;
     private Animation doorAnimation;
+    private bool statusChanged = false;
+    
 
 	void Start ()
     {
+        hintToDisplay = GameObject.Find(Constants.GAME_CONTROLLER).GetComponent<Lvl1Hints>();
         doorAnimation = doors.GetComponent<Animation>();
         doorSound = doors.GetComponent<AudioSource>();
 	}
@@ -45,7 +48,7 @@ public class ComputerHandlerMinigame : MonoBehaviour {
                         GetComponent<AudioSource>().Play();
                     }
                     else
-                    {
+                    {   
                         if (!isDoorOpen)
                         {
                             DoorOpen();
@@ -77,7 +80,7 @@ public class ComputerHandlerMinigame : MonoBehaviour {
             isDoorOpen = true;
             doorAnimation["door1Open"].speed = 1;
             doorAnimation.Play();
-            textToDisplay = "F aby zamknąć";
+            textToDisplay = "F to close";
             doorSound.Play();
         }
     }
@@ -90,16 +93,18 @@ public class ComputerHandlerMinigame : MonoBehaviour {
             doorAnimation["door1Open"].time = doorAnimation["door1Open"].length;
             doorAnimation["door1Open"].speed = -1;
             doorAnimation.Play();
-            textToDisplay = "F aby otworzyć";
+            textToDisplay = "F to open";
             doorSound.Play();
         }
     }
 
     public void changeDoorHacked()
-    {
+    {   
+        hintToDisplay.setText("Door hacked!");
+        hintToDisplay.setStatus(true, "Find way to the elevator");
         doorHacked = true;
         DoorOpen();
-        textToDisplay = "F aby zamknąć";
+        textToDisplay = "F to close";
         characterNames = new string[]{ Constants.CHARACTER_SCIENTIST,
                                         Constants.CHARACTER_MAYOMA,
                                         Constants.CHARACTER_CATWOMAN};
