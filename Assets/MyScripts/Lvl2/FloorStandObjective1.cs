@@ -6,6 +6,10 @@ public class FloorStandObjective1 : MonoBehaviour
 
     [SerializeField]
     private GameObject doors;
+    [SerializeField]
+    private Light doorLight;
+    [SerializeField]
+    private GameObject cylinderMaterial;
 
     public bool isOn;
     private bool firstTime = true;
@@ -36,6 +40,8 @@ public class FloorStandObjective1 : MonoBehaviour
             if (firstTime)
             {
                 firstTime = false;
+                doorLight.color = Color.green;
+                cylinderMaterial.GetComponent<Renderer>().material.color = Color.green;
                 ChangeObjective();
             }
         }

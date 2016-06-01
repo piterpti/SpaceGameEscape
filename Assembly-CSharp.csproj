@@ -86,9 +86,11 @@
      <Compile Include="Assets\MyScripts\Lvl2\LaserVerticalCollision.cs" />
      <Compile Include="Assets\MyScripts\Lvl2\Lvl2Win.cs" />
      <Compile Include="Assets\MyScripts\Lvl2\Objective5.cs" />
+     <Compile Include="Assets\MyScripts\Lvl2\Objective6.cs" />
      <Compile Include="Assets\MyScripts\Lvl2\ObjectiveChange1.cs" />
      <Compile Include="Assets\MyScripts\Lvl2\ObjectiveChestDestroy.cs" />
      <Compile Include="Assets\MyScripts\Lvl2\ObjectiveHandler.cs" />
+     <Compile Include="Assets\MyScripts\Lvl2\ObjectiveNextSide.cs" />
      <Compile Include="Assets\MyScripts\Lvl2\RespawnOnButton.cs" />
      <Compile Include="Assets\MyScripts\Lvl2\Respawner.cs" />
      <Compile Include="Assets\MyScripts\Lvl2\SetLastDoor.cs" />
