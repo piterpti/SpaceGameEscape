@@ -11,6 +11,7 @@ public class FloorTrigger : MonoBehaviour {
         {
             Lvl1Hints hint = GameObject.Find(Constants.GAME_CONTROLLER).GetComponent<Lvl1Hints>();
             hint.setText("Open the door for others!");
+            isChanged = true;
         }
     }
 }

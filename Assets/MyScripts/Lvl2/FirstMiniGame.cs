@@ -14,9 +14,9 @@ public class FirstMiniGame : MonoBehaviour {
     private Animation doorAnimation;
 
     private bool displayText = true;
+    private bool laserOff = false;
 
-
-    private const string HIT_F_TO_INTERACT = "Wciśnij F, aby zhackować";
+    private const string HIT_F_TO_INTERACT = "Press F to hack";
     private bool doorHacked = false;
 
 	void Start () {
@@ -29,33 +29,36 @@ public class FirstMiniGame : MonoBehaviour {
 
     void OnTriggerStay(Collider other)
     {
-        if (!doorHacked)
+        if (laserOff)
         {
-            if (other.gameObject.name.Equals(Constants.CHARACTER_SCIENTIST))
+            if (!doorHacked)
             {
-                if (other.gameObject == ControllerSetup.CURRENT_CHARACTER)
+                if (other.gameObject.name.Equals(Constants.CHARACTER_SCIENTIST))
                 {
-                    interactionText.text = HIT_F_TO_INTERACT;
-                    displayText = true;
-                }
-                else
-                {
-                    if (displayText)
+                    if (other.gameObject == ControllerSetup.CURRENT_CHARACTER)
                     {
-                        interactionText.text = null;
-                        displayText = false;
+                        interactionText.text = HIT_F_TO_INTERACT;
+                        displayText = true;
+                    }
+                    else
+                    {
+                        if (displayText)
+                        {
+                            interactionText.text = null;
+                            displayText = false;
+                        }
+                    }
+                    if (Input.GetKeyDown(KeyCode.F) && other.gameObject == ControllerSetup.CURRENT_CHARACTER)
+                    {
+                        state.openMiniGame();
+                        GetComponent<AudioSource>().Play();
                     }
                 }
-                if (Input.GetKeyDown(KeyCode.F) && other.gameObject == ControllerSetup.CURRENT_CHARACTER)
-                {
-                    state.openMiniGame();
-                    GetComponent<AudioSource>().Play();
-                }
             }
-        }
-        else
-        {
-            Destroy(GetComponent<FirstMiniGame>());
+            else
+            {
+                Destroy(GetComponent<FirstMiniGame>());
+            }
         }
     }
 
@@ -85,5 +88,16 @@ public class FirstMiniGame : MonoBehaviour {
         interactionText.text = null;
         ChangeDoorLights();
         doorToOpen.GetComponent<AudioSource>().Play();
+        ChangeObjective();
+    }
+
+    public void LasersOff()
+    {
+        laserOff = true;
+    }
+    private void ChangeObjective()
+    {
+        ObjectiveHandler handler = GameObject.Find(Constants.GAME_CONTROLLER).GetComponent<ObjectiveHandler>();
+        handler.nextTask(ObjectiveHandler.TASKS_GO_TO_THE_ROOM);        
     }
 }

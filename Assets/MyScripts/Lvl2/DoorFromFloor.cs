@@ -26,7 +26,11 @@ public class DoorFromFloor : MonoBehaviour {
             GameObject[] floors = GameObject.FindGameObjectsWithTag("InteractiveFloor");
             foreach (GameObject g in floors)
             {
-                if (g.GetComponent<FloorStand>().isOn)
+                if (g.GetComponent<FloorStand>() != null && g.GetComponent<FloorStand>().isOn)
+                {
+                    counter++;
+                }
+                if(g.GetComponent<FloorStandObjective1>() != null && g.GetComponent<FloorStandObjective1>().isOn)
                 {
                     counter++;
                 }
@@ -36,6 +40,8 @@ public class DoorFromFloor : MonoBehaviour {
             {
                 DoorOpen();
                 isOpenPernamently = true;
+                ChangeObjective();
+                Destroy(GetComponent<DoorFromFloor>());
             }            
         }
 	}
@@ -63,5 +69,11 @@ public class DoorFromFloor : MonoBehaviour {
             doorOpen = false;
             GetComponent<AudioSource>().Play();
         }
+    }
+
+    private void ChangeObjective()
+    {
+        ObjectiveHandler handler = GameObject.Find(Constants.GAME_CONTROLLER).GetComponent<ObjectiveHandler>();
+        handler.nextTask(ObjectiveHandler.SECOND_DOORS_OPEN);
     }
 }

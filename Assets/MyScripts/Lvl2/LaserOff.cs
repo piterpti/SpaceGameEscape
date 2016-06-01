@@ -7,9 +7,12 @@ public class LaserOff : MonoBehaviour {
     
     [SerializeField]
     private Text interactionText;
+    [SerializeField]
+    private FirstMiniGame callWhenLaserOffs;
+    
     
     private bool isLaserDestroyed;
-    private const string LASER_OFF_TEXT = "F, aby wyłączyć lasery";
+    private const string LASER_OFF_TEXT = "Press F to disable lasers";
     private bool displayText = true;
 
 	void Start () {
@@ -54,6 +57,8 @@ public class LaserOff : MonoBehaviour {
             GameObject laserHorizontal = GameObject.Find("LaserVertical");
             laserHorizontal.GetComponent<Animator>().enabled = false;
             GetComponent<AudioSource>().Play();
+            ChangeObjective();
+
 
             Destroy(GetComponent<LaserOff>());
             interactionText.text = null;
@@ -63,5 +68,12 @@ public class LaserOff : MonoBehaviour {
     void OnTriggerExit()
     {
         interactionText.text = null;
+    }
+
+    private void ChangeObjective()
+    {
+        ObjectiveHandler handler = GameObject.Find(Constants.GAME_CONTROLLER).GetComponent<ObjectiveHandler>();
+        handler.nextTask(ObjectiveHandler.TASKS_HACK_COMPUTER);
+        callWhenLaserOffs.LasersOff();
     }
 }

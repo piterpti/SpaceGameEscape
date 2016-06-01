@@ -79,11 +79,16 @@
      <Compile Include="Assets\MyScripts\Lvl2\EndFloor.cs" />
      <Compile Include="Assets\MyScripts\Lvl2\FirstMiniGame.cs" />
      <Compile Include="Assets\MyScripts\Lvl2\FloorStand.cs" />
+     <Compile Include="Assets\MyScripts\Lvl2\FloorStandObjective1.cs" />
      <Compile Include="Assets\MyScripts\Lvl2\LaserAnimation1.cs" />
      <Compile Include="Assets\MyScripts\Lvl2\LaserCollision.cs" />
      <Compile Include="Assets\MyScripts\Lvl2\LaserOff.cs" />
      <Compile Include="Assets\MyScripts\Lvl2\LaserVerticalCollision.cs" />
      <Compile Include="Assets\MyScripts\Lvl2\Lvl2Win.cs" />
+     <Compile Include="Assets\MyScripts\Lvl2\Objective5.cs" />
+     <Compile Include="Assets\MyScripts\Lvl2\ObjectiveChange1.cs" />
+     <Compile Include="Assets\MyScripts\Lvl2\ObjectiveChestDestroy.cs" />
+     <Compile Include="Assets\MyScripts\Lvl2\ObjectiveHandler.cs" />
      <Compile Include="Assets\MyScripts\Lvl2\RespawnOnButton.cs" />
      <Compile Include="Assets\MyScripts\Lvl2\Respawner.cs" />
      <Compile Include="Assets\MyScripts\Lvl2\SetLastDoor.cs" />

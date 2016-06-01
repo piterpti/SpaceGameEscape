@@ -20,7 +20,9 @@ public class GameControl : MonoBehaviour {
     [SerializeField]
     private Canvas helpCanvas;
     [SerializeField]
-    private Text followText; 
+    private Text followText;
+    [SerializeField]
+    private Text objectiveText;
 
     private static ControllerSetup controllerSetup;
     private static WowCamera wowCamera;
@@ -54,20 +56,13 @@ public class GameControl : MonoBehaviour {
     public void openMiniGame()
     {
         controllerSetup.DisableAllCharacters();
-        controllerSetup.enabled = false;
-        wowCamera.enabled = false;
         mainCamera.transform.position = new Vector3(-0.09f, -0.47f, -11.5f);
         mainCamera.transform.rotation = Quaternion.identity;
-        characterText.enabled = false;
-        followText.enabled = false;
-        interactionText.enabled = false;
-        Cursor.visible = true;
+        changeUIStatus(false);
     }
 
     public void endMiniGame(bool status)
     {
-        wowCamera.enabled = true;
-        controllerSetup.enabled = true;
         controllerSetup.EnableCurrentCharacter();
         if (status)
         {
@@ -80,10 +75,18 @@ public class GameControl : MonoBehaviour {
                 minigamelvl2.ChangeHacked();
             }
         }
-        characterText.enabled = true;
-        interactionText.enabled = true;
-        followText.enabled = true;
-        Cursor.visible = false;
+        changeUIStatus(true);
+    }
+
+    private void changeUIStatus(bool onOff)
+    {
+        objectiveText.enabled = onOff;
+        characterText.enabled = onOff;
+        wowCamera.enabled = onOff;
+        controllerSetup.enabled = onOff;
+        interactionText.enabled = onOff;
+        followText.enabled = onOff;
+        Cursor.visible = !onOff;
     }
 
 }

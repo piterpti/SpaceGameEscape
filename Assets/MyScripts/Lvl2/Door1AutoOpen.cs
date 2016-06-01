@@ -34,6 +34,7 @@ public class Door1AutoOpen : MonoBehaviour
 
     public void DoorOpen()
     {
+        if(enabled)
         if (!doorOpen)
         {
             doorAnimation[ANIMATION_NAME].speed = 1;
@@ -45,6 +46,7 @@ public class Door1AutoOpen : MonoBehaviour
 
     public void DoorClose()
     {
+        if(enabled)
         if (doorOpen)
         {
             doorAnimation[ANIMATION_NAME].time = doorAnimation[ANIMATION_NAME].length;

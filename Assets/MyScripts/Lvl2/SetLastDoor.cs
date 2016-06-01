@@ -25,7 +25,6 @@ public class SetLastDoor : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.F))
         {            
-            doorsToOpen.GetComponent<DoorFromFloor>().isOpenPernamently = true;
             interactionText.text = null;
 
             GameObject floor = GameObject.Find("FloorToAnim");
@@ -40,6 +39,8 @@ public class SetLastDoor : MonoBehaviour {
                 Destroy(g);
             }
 
+            ChangeObjective();
+
             Destroy(GetComponent<SetLastDoor>());
             
         }
@@ -48,5 +49,11 @@ public class SetLastDoor : MonoBehaviour {
     void OnTriggerExit()
     {
         interactionText.text = null;
+    }
+
+    private void ChangeObjective()
+    {
+        ObjectiveHandler handler = GameObject.Find(Constants.GAME_CONTROLLER).GetComponent<ObjectiveHandler>();
+        handler.nextTask(ObjectiveHandler.NEXT_SIDE);
     }
 }
