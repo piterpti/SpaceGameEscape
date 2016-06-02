@@ -11,19 +11,20 @@ public class ControllerSetup : MonoBehaviour
     private Text followText;
     [SerializeField]
     private  GameObject character_mayoma;
-    private static GameObject character_mayoma_b;
+    public static GameObject character_mayoma_b;
     [SerializeField]
     private  GameObject character_sciencist;
-    private static GameObject character_sciencist_b;
+    public static GameObject character_sciencist_b;
     [SerializeField]
     private  GameObject character_catwoman;
-    private static GameObject character_catwoman_b;
+    public static GameObject character_catwoman_b;
     [SerializeField]
     private WowCamera wowCamera;
 
     public static GameObject CURRENT_CHARACTER;
     private static bool character_change_available;
     private static bool button_q;
+    public static bool room3_navigation_enable = true;
     
     void Start()
     {
@@ -189,6 +190,7 @@ void Update()
 
     }
     public static void DisableFollorCharacter() {
+
         character_catwoman_b.GetComponent<CatwomanController>().m_folow_main_character = false;
         character_mayoma_b.GetComponent<MayomaController>().m_folow_main_character = false;
         character_sciencist_b.GetComponent<SciencistController>().m_folow_main_character = false;
@@ -199,6 +201,7 @@ void Update()
         character_mayoma_b.GetComponent<MayomaController>().m_folow_main_character = true;
         character_sciencist_b.GetComponent<SciencistController>().m_folow_main_character = true;
 
+
     }
     public static void DisableButtonQ()
     {
@@ -208,4 +211,5 @@ void Update()
     {
         button_q = true;
     }
+
 }

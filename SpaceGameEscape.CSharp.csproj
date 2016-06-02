@@ -58,12 +58,6 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Networking">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
@@ -94,7 +88,10 @@
     <Compile Include="Assets\MyScripts\Lvl1\AutoDoorOpen.cs" />
     <Compile Include="Assets\MyScripts\Lvl1\ComputerHandler.cs" />
     <Compile Include="Assets\MyScripts\Lvl1\ComputerHandlerMinigame.cs" />
+    <Compile Include="Assets\MyScripts\Lvl1\FloorTrigger.cs" />
     <Compile Include="Assets\MyScripts\Lvl1\Hack.cs" />
+    <Compile Include="Assets\MyScripts\Lvl1\LastRoomObjective.cs" />
+    <Compile Include="Assets\MyScripts\Lvl1\Lvl1Hints.cs" />
     <Compile Include="Assets\MyScripts\Lvl1\Lvl1Win.cs" />
     <Compile Include="Assets\MyScripts\Lvl1\StartGame.cs" />
     <Compile Include="Assets\MyScripts\Lvl2\AlarmMovement.cs" />
@@ -106,18 +103,27 @@
     <Compile Include="Assets\MyScripts\Lvl2\EndFloor.cs" />
     <Compile Include="Assets\MyScripts\Lvl2\FirstMiniGame.cs" />
     <Compile Include="Assets\MyScripts\Lvl2\FloorStand.cs" />
+    <Compile Include="Assets\MyScripts\Lvl2\FloorStandObjective1.cs" />
     <Compile Include="Assets\MyScripts\Lvl2\LaserAnimation1.cs" />
     <Compile Include="Assets\MyScripts\Lvl2\LaserCollision.cs" />
     <Compile Include="Assets\MyScripts\Lvl2\LaserOff.cs" />
     <Compile Include="Assets\MyScripts\Lvl2\LaserVerticalCollision.cs" />
     <Compile Include="Assets\MyScripts\Lvl2\Lvl2Win.cs" />
+    <Compile Include="Assets\MyScripts\Lvl2\Objective5.cs" />
+    <Compile Include="Assets\MyScripts\Lvl2\Objective6.cs" />
+    <Compile Include="Assets\MyScripts\Lvl2\ObjectiveChange1.cs" />
+    <Compile Include="Assets\MyScripts\Lvl2\ObjectiveChestDestroy.cs" />
+    <Compile Include="Assets\MyScripts\Lvl2\ObjectiveHandler.cs" />
+    <Compile Include="Assets\MyScripts\Lvl2\ObjectiveNextSide.cs" />
     <Compile Include="Assets\MyScripts\Lvl2\RespawnOnButton.cs" />
     <Compile Include="Assets\MyScripts\Lvl2\Respawner.cs" />
     <Compile Include="Assets\MyScripts\Lvl2\SetLastDoor.cs" />
     <Compile Include="Assets\MyScripts\Lvl2\TrapControl.cs" />
     <Compile Include="Assets\MyScripts\Lvl2\laserScript.cs" />
+    <Compile Include="Assets\MyScripts\Room2DisableBots.cs" />
     <Compile Include="Assets\MyScripts\TriggersStript\NavMeshDisableRoom2.cs" />
     <Compile Include="Assets\MyScripts\TriggersStript\NavMeshEnableRoom2.cs" />
+    <Compile Include="Assets\MyScripts\TriggersStript\SimulateCButton.cs" />
     <Compile Include="Assets\MyScripts\TriggersStript\VentilationTrigger.cs" />
     <Compile Include="Assets\MyScripts\WowCamera.cs" />
   </ItemGroup>

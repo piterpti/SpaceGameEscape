@@ -14,21 +14,29 @@ public class SetLastDoor : MonoBehaviour {
     private GameObject[] enemyLasres;
 
     private const string F_TO_OPEN = "F - interakcja";
+    GameObject trigger;
 
-	void Start () {
+    void Start () {
 	    
 	}
-	
-	void OnTriggerStay()
+    void OnTriggerEnter()
+    {
+        trigger = GameObject.Find("StopCharactersBot");
+    }
+
+    void OnTriggerStay()
     {
         interactionText.text = F_TO_OPEN;
+        GameObject floor = GameObject.Find("FloorToAnim");
+        Animation animFloor = floor.GetComponent<Animation>();
+
 
         if (Input.GetKeyDown(KeyCode.F))
-        {            
+        {
+           
             interactionText.text = null;
 
-            GameObject floor = GameObject.Find("FloorToAnim");
-            Animation animFloor = floor.GetComponent<Animation>();
+            
             animFloor.Play();
 
             doorsToOpen.GetComponent<DoorLightChange>().ChangeLights(Color.green);
@@ -42,8 +50,16 @@ public class SetLastDoor : MonoBehaviour {
             ChangeObjective();
 
             Destroy(GetComponent<SetLastDoor>());
-            
+            //to dopiero jak skonczy sie animacja
+            trigger.SetActive(false);
+            ControllerSetup.EnableFollorCharacter();
+            ControllerSetup.EnableButtonQ();
+
         }
+
+
+
+
     }
 
     void OnTriggerExit()
@@ -55,5 +71,7 @@ public class SetLastDoor : MonoBehaviour {
     {
         ObjectiveHandler handler = GameObject.Find(Constants.GAME_CONTROLLER).GetComponent<ObjectiveHandler>();
         handler.nextTask(ObjectiveHandler.NEXT_SIDE);
+
     }
+    
 }

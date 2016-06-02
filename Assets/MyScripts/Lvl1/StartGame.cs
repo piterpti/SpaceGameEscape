@@ -9,4 +9,7 @@ public class StartGame : MonoBehaviour {
         SceneManager.LoadScene("Lvl1");
         //Cursor.visible = false;
     }
+    public void ExitGameFunction() {
+        Application.Quit();
+    }
 }

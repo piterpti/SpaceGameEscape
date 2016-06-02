@@ -3,9 +3,11 @@ using System.Collections;
 
 public class NavMeshDisableRoom2 : MonoBehaviour {
 
-    void OnTriggerEnter() {
+    void OnTriggerEnter(Collider other) {
         ControllerSetup.DisableButtonQ();
         ControllerSetup.DisableFollorCharacter();
+        
+        
     }
     void OnTriggerExit()
     {

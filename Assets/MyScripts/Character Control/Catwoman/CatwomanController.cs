@@ -55,6 +55,7 @@ public class CatwomanController : MonoBehaviour
     {
         if (m_manual)
         {
+
             agent.enabled = false;
             // read inputs
             float h = CrossPlatformInputManager.GetAxis("Horizontal");

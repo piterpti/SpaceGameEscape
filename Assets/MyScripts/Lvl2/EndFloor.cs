@@ -10,6 +10,7 @@ public class EndFloor : MonoBehaviour {
 
     private Animation floorAnimation;
     private BridgeOpen bridgeOpenScript;
+    private GameObject triggerGameplay;
 
     private bool floorUp = false;
     private const string ANIMATION_NAME = "AnimatedFloor";
@@ -19,12 +20,18 @@ public class EndFloor : MonoBehaviour {
 	void Start () {
         floorAnimation = floorToAnim.GetComponent<Animation>();
         bridgeOpenScript = bridgeControlFloor.GetComponent<BridgeOpen>();
-	}
+        triggerGameplay = GameObject.Find("NavMeshDisableTrigger");
+
+    }
 	
 	void Update () {
-        if (bridgeOpenScript.isBridgeOpen)
+        if (bridgeOpenScript.isBridgeOpen) {
             isEnded = true;
-	}
+            triggerGameplay.SetActive(false);
+        }
+
+
+    }
 
     void OnTriggerStay()
     {
@@ -57,6 +64,7 @@ public class EndFloor : MonoBehaviour {
             floorAnimation.Play();
             ColorChange(Color.green);
             floorUp = !floorUp;
+
         }
 
     }
@@ -70,8 +78,11 @@ public class EndFloor : MonoBehaviour {
             floorAnimation.Play();
             ColorChange(Color.red);
             floorUp = !floorUp;
+
+
         }
     }
+    
 
 
    /* public void DoorOpen()
