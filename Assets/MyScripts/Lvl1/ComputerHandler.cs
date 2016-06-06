@@ -22,12 +22,15 @@ public class ComputerHandler : MonoBehaviour {
     private Animation doorAnimation;
     private bool isDoorOpen = false;
     private bool firstTime = true;
+    private NavMeshObstacle obstacle;
 
 	void Start ()
     {
         doorAnimation = doors.GetComponent<Animation>();
         doorSound = doors.GetComponent<AudioSource>();
-	}
+        obstacle = doors.GetComponent<NavMeshObstacle>();
+
+    }
 	
 	void Update ()
     {
@@ -46,10 +49,12 @@ public class ComputerHandler : MonoBehaviour {
                     if (!isDoorOpen)
                     {
                         DoorOpen();
+                        
                     }
                     else
                     {
                         DoorClose();
+                        
                     }
                 }
                 
@@ -82,6 +87,7 @@ public class ComputerHandler : MonoBehaviour {
                 hint.setText("Wait for friends!");
                 firstTime = false;
             }
+            obstacle.enabled = false;
         }
     }
 
@@ -95,6 +101,7 @@ public class ComputerHandler : MonoBehaviour {
             doorAnimation.Play();
             textToDisplay = "F to open";
             doorSound.Play();
+            obstacle.enabled = true;
         }
         
     }
