@@ -15,6 +15,7 @@ public class CatwomanController : MonoBehaviour
     public NavMeshAgent agent;
     public Transform target;
     Animator m_Animator;
+    static public Animator m_Animator2;
 
     [SerializeField]
     public bool navEnabled = true; // added By piter -- delte later
@@ -22,6 +23,7 @@ public class CatwomanController : MonoBehaviour
     private void Start()
     {
         m_Animator = GetComponent<Animator>();
+        m_Animator2 = m_Animator;
         agent = GetComponent<NavMeshAgent>();
         if (Camera.main != null)
         {
@@ -96,7 +98,7 @@ public class CatwomanController : MonoBehaviour
                     m_Animator.SetFloat("Forward", 0.7f, 0.1f, Time.deltaTime);
                     //m_Animator.SetFloat("Turn", 0.7f, 0.1f, Time.deltaTime);
                 }
-                if (distance <= 3.5f)
+                if (distance <= 4f)
                 {
                     m_Animator.SetFloat("Forward", 0, 0, Time.deltaTime);
                 }
@@ -106,5 +108,8 @@ public class CatwomanController : MonoBehaviour
                 agent.enabled = false;
             }
         }
+    }
+    public static void Reset() {
+        m_Animator2.SetFloat("Forward", 0, 0, Time.deltaTime);
     }
 }

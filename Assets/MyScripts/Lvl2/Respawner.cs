@@ -10,5 +10,8 @@ public class Respawner : MonoBehaviour {
     {
         other.transform.position = respawnPoint.position;
         GameObject.Find("Characters").GetComponent<AudioSource>().Play();
+        CatwomanController.Reset();
+        MayomaController.Reset();
+        SciencistController.Reset();
     }
 }

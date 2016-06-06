@@ -50,10 +50,7 @@ public class SetLastDoor : MonoBehaviour {
             ChangeObjective();
 
             Destroy(GetComponent<SetLastDoor>());
-            //to dopiero jak skonczy sie animacja
-            trigger.SetActive(false);
-            ControllerSetup.EnableFollorCharacter();
-            ControllerSetup.EnableButtonQ();
+
 
         }
 
@@ -71,7 +68,6 @@ public class SetLastDoor : MonoBehaviour {
     {
         ObjectiveHandler handler = GameObject.Find(Constants.GAME_CONTROLLER).GetComponent<ObjectiveHandler>();
         handler.nextTask(ObjectiveHandler.NEXT_SIDE);
-
     }
     
 }

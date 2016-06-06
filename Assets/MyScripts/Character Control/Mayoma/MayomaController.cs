@@ -17,6 +17,7 @@ public class MayomaController : MonoBehaviour
     Animator m_Animator;
     Animation animation_component;
     private bool punch;
+    static public Animator m_Animator2;
 
     [SerializeField]
     public bool navEnabled = true; // added By piter -- delte later
@@ -24,6 +25,7 @@ public class MayomaController : MonoBehaviour
     private void Start()
     {
         m_Animator = GetComponent<Animator>();
+        m_Animator2 = m_Animator;
         agent = GetComponent<NavMeshAgent>();
         animation_component = GetComponent<Animation>();
         // get the transform of the main camera
@@ -98,7 +100,7 @@ public class MayomaController : MonoBehaviour
                 agent.enabled = true;
                 agent.SetDestination(target.position);
                 float distance = Vector3.Distance(target.transform.position, this.transform.position);
-                if (distance > 4f)
+                if (distance > 3.5f)
                 {
                     m_Animator.SetFloat("Forward", 0.7f, 0.1f, Time.deltaTime);
                     //m_Animator.SetFloat("Turn", 0.7f, 0.1f, Time.deltaTime);
@@ -116,5 +118,9 @@ public class MayomaController : MonoBehaviour
 
         }
         }
+    public static void Reset()
+    {
+        m_Animator2.SetFloat("Forward", 0, 0, Time.deltaTime);
+    }
 }
 

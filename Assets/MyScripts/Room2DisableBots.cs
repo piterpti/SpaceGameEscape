@@ -8,6 +8,9 @@ public class Room2DisableBots : MonoBehaviour
     {
         ControllerSetup.DisableFollorCharacter();
         ControllerSetup.DisableButtonQ();
+        CatwomanController.Reset();
+        MayomaController.Reset();
+        SciencistController.Reset();
 
     }
 }

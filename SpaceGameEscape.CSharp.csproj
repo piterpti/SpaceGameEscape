@@ -121,6 +121,7 @@
     <Compile Include="Assets\MyScripts\Lvl2\TrapControl.cs" />
     <Compile Include="Assets\MyScripts\Lvl2\laserScript.cs" />
     <Compile Include="Assets\MyScripts\Room2DisableBots.cs" />
+    <Compile Include="Assets\MyScripts\TriggersStript\AnimFloorTriggerNavMesh.cs" />
     <Compile Include="Assets\MyScripts\TriggersStript\NavMeshDisableRoom2.cs" />
     <Compile Include="Assets\MyScripts\TriggersStript\NavMeshEnableRoom2.cs" />
     <Compile Include="Assets\MyScripts\TriggersStript\SimulateCButton.cs" />
