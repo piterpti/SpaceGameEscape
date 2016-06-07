@@ -10,8 +10,6 @@ public class LastRoomObjective : MonoBehaviour {
 	void Update () {
 	    if(firstTime && mayomaEnter && sciencistEnter)
         {
-            Lvl1Hints hint = GameObject.Find(Constants.GAME_CONTROLLER).GetComponent<Lvl1Hints>();
-            hint.setStatus(true, "Congratulations! Come over doors all characters");
             firstTime = false;
         }
 	}

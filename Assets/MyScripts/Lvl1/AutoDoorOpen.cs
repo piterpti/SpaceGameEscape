@@ -20,8 +20,7 @@ public class AutoDoorOpen : MonoBehaviour {
     {
         if(firstTime && temp)
         {
-            Lvl1Hints hint = GameObject.Find(Constants.GAME_CONTROLLER).GetComponent<Lvl1Hints>();
-            hint.setText("Try to destroy this chests");
+            ChangeObjective();
             temp = false;           
         }
     }
@@ -64,5 +63,11 @@ public class AutoDoorOpen : MonoBehaviour {
             doorOpen = false;
             doorSound.Play();
         }
+    }
+
+    private void ChangeObjective()
+    {
+        ObjectiveHandlerLvl1 handler = GameObject.Find(Constants.GAME_CONTROLLER).GetComponent<ObjectiveHandlerLvl1>();
+        handler.nextTask(ObjectiveHandlerLvl1.MAYOMA_DESTROY_CHEST);
     }
 }

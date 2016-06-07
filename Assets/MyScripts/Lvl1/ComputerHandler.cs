@@ -83,8 +83,7 @@ public class ComputerHandler : MonoBehaviour {
             doorSound.Play();
             if (firstTime)
             {
-                Lvl1Hints hint = GameObject.Find(Constants.GAME_CONTROLLER).GetComponent<Lvl1Hints>();
-                hint.setText("Wait for friends!");
+                ChangeObjective();
                 firstTime = false;
             }
             obstacle.enabled = false;
@@ -104,5 +103,11 @@ public class ComputerHandler : MonoBehaviour {
             obstacle.enabled = true;
         }
         
+    }
+
+    private void ChangeObjective()
+    {
+        ObjectiveHandlerLvl1 handler = GameObject.Find(Constants.GAME_CONTROLLER).GetComponent<ObjectiveHandlerLvl1>();
+        handler.nextTask(ObjectiveHandlerLvl1.FINAL_OBJ);
     }
 }

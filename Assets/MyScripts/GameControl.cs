@@ -80,7 +80,7 @@ public class GameControl : MonoBehaviour {
 
     private void changeUIStatus(bool onOff)
     {
-        objectiveText.enabled = onOff;
+        //objectiveText.enabled = onOff;
         characterText.enabled = onOff;
         wowCamera.enabled = onOff;
         controllerSetup.enabled = onOff;

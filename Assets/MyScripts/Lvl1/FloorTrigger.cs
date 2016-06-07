@@ -9,9 +9,14 @@ public class FloorTrigger : MonoBehaviour {
     {
         if (!isChanged)
         {
-            Lvl1Hints hint = GameObject.Find(Constants.GAME_CONTROLLER).GetComponent<Lvl1Hints>();
-            hint.setText("Open the door for others!");
+            ChangeObjective();
             isChanged = true;
         }
+    }
+
+    private void ChangeObjective()
+    {
+        ObjectiveHandlerLvl1 handler = GameObject.Find(Constants.GAME_CONTROLLER).GetComponent<ObjectiveHandlerLvl1>();
+        handler.nextTask(ObjectiveHandlerLvl1.OPEN_DOORS);
     }
 }

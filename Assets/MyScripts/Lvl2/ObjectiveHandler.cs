@@ -15,14 +15,16 @@ public class ObjectiveHandler : MonoBehaviour {
     public static int HELP_OTHERS = 9;
     public static int END_GAME = 10;
 
+    private bool temporaryText = false;
+
     public static Text objectiveText;
 
     private string[] OBJECTIVES = { "Find way to disable lasers",
-                                        "Hack computer to open doors at the end of the corridor",
+                                        "Hack computer to open doors\nat the end of the corridor",
                                         "Go through the corridor",
                                         "Hmm.. Try to destroy this chests!",
                                         "Find 2nd floor like this to open next door!\nLook, doors in the corridor opened",
-                                        "Stan on two floors at the same time to open door",
+                                        "Stan on two floors at the same time\n to open doors",
                                         "Go through open doors",
                                         "Try to overcome obstacles and turn it off!",
                                         "Now, try get to the next side",
@@ -43,7 +45,24 @@ public class ObjectiveHandler : MonoBehaviour {
             objectiveText.text = OBJECTIVES[taskNumber];
             taskChange = false;
         }
+
+        if(temporaryText && Input.GetKeyDown(KeyCode.Escape))
+        {
+            resumetPreviousText();
+            temporaryText = false;
+        }
 	}
+
+    public void setTempText(string text)
+    {
+        objectiveText.text = text;
+        temporaryText = true;
+    }
+
+    public void resumetPreviousText()
+    {
+        objectiveText.text = OBJECTIVES[taskNumber];
+    }
 
     public void nextTask(int task)
     {
@@ -56,7 +75,7 @@ public class ObjectiveHandler : MonoBehaviour {
     {
         objectiveText.color = Color.green;      
         objectiveText.text = GRATZ[Random.Range(0, GRATZ.Length)];
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1.5f);
         objectiveText.color = Color.red;
         taskNumber = nextTask;
         taskChange = true;
@@ -67,4 +86,5 @@ public class ObjectiveHandler : MonoBehaviour {
         ObjectiveHandler handler = GameObject.Find(Constants.GAME_CONTROLLER).GetComponent<ObjectiveHandler>();
         handler.nextTask(ObjectiveHandler.CHESTS_DESTROYED);
     }
+    
 }

@@ -17,21 +17,29 @@ public class ComputerHandlerMinigame : MonoBehaviour {
     [SerializeField]    
     public GameControl state;
 
-    private Lvl1Hints hintToDisplay;
 
     private AudioSource doorSound;
     private bool doorHacked = false;
     private bool isDoorOpen = false;
     private Animation doorAnimation;
     private bool statusChanged = false;
-    
+    private ObjectiveHandlerLvl1 handler;
 
-	void Start ()
+
+    void Start ()
     {
-        hintToDisplay = GameObject.Find(Constants.GAME_CONTROLLER).GetComponent<Lvl1Hints>();
+        handler = GameObject.Find(Constants.GAME_CONTROLLER).GetComponent<ObjectiveHandlerLvl1>();
         doorAnimation = doors.GetComponent<Animation>();
-        doorSound = doors.GetComponent<AudioSource>();
+        doorSound = doors.GetComponent<AudioSource>();        
 	}
+
+    void Update()
+    {
+        if(!doorHacked && Input.GetKeyDown(KeyCode.Escape))
+        {
+            handler.resumetPreviousText();
+        }
+    }
 
     void OnTriggerStay(Collider other)
     {
@@ -46,6 +54,8 @@ public class ComputerHandlerMinigame : MonoBehaviour {
                     {
                         state.openMiniGame();
                         GetComponent<AudioSource>().Play();
+                        handler.setTempText("Drag the white circle to the red square\n with the mouse");
+
                     }
                     else
                     {   
@@ -99,9 +109,8 @@ public class ComputerHandlerMinigame : MonoBehaviour {
     }
 
     public void changeDoorHacked()
-    {   
-        hintToDisplay.setText("Door hacked!");
-        hintToDisplay.setStatus(true, "Find way to the elevator");
+    {
+        ChangeObjective();
         doorHacked = true;
         DoorOpen();
         textToDisplay = "F to close";
@@ -117,5 +126,10 @@ public class ComputerHandlerMinigame : MonoBehaviour {
         GameObject.Find("DoorLamp4").GetComponent<Renderer>().material.color = Color.green;
         GameObject.Find("DoorLamp5").GetComponent<Renderer>().material.color = Color.green;
         GameObject.Find("DoorLamp6").GetComponent<Renderer>().material.color = Color.green;
+    }
+
+    private void ChangeObjective()
+    {
+        handler.nextTask(ObjectiveHandlerLvl1.GO_THROUGH_CORRIDOR);
     }
 }

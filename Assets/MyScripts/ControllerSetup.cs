@@ -54,7 +54,7 @@ void Update()
         {
             GetInput();
         }
-        if (character_sciencist_b.GetComponent<SciencistController>().m_folow_main_character)
+        if(character_sciencist_b != null && character_sciencist_b.GetComponent<SciencistController>().m_folow_main_character)
             followText.text = "Follow: ON";
         else
             followText.text = "Follow: OFF";

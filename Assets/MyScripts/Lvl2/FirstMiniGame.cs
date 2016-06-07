@@ -18,10 +18,13 @@ public class FirstMiniGame : MonoBehaviour {
 
     private const string HIT_F_TO_INTERACT = "Press F to hack";
     private bool doorHacked = false;
+    private ObjectiveHandler handler;
 
-	void Start () {
+
+    void Start () {
         doorAnimation = doorToOpen.GetComponent<Animation>();
-	}
+        handler = GameObject.Find(Constants.GAME_CONTROLLER).GetComponent<ObjectiveHandler>();
+    }
 	
 	void Update () {
 	
@@ -50,8 +53,11 @@ public class FirstMiniGame : MonoBehaviour {
                     }
                     if (Input.GetKeyDown(KeyCode.F) && other.gameObject == ControllerSetup.CURRENT_CHARACTER)
                     {
+                        
                         state.openMiniGame();
                         GetComponent<AudioSource>().Play();
+                        handler.setTempText("Drag the white circle to the red square\n with the mouse");
+
                     }
                 }
             }
@@ -97,7 +103,6 @@ public class FirstMiniGame : MonoBehaviour {
     }
     private void ChangeObjective()
     {
-        ObjectiveHandler handler = GameObject.Find(Constants.GAME_CONTROLLER).GetComponent<ObjectiveHandler>();
         handler.nextTask(ObjectiveHandler.TASKS_GO_TO_THE_ROOM);        
     }
 }

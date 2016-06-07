@@ -67,8 +67,8 @@
      <Compile Include="Assets\MyScripts\Lvl1\FloorTrigger.cs" />
      <Compile Include="Assets\MyScripts\Lvl1\Hack.cs" />
      <Compile Include="Assets\MyScripts\Lvl1\LastRoomObjective.cs" />
-     <Compile Include="Assets\MyScripts\Lvl1\Lvl1Hints.cs" />
      <Compile Include="Assets\MyScripts\Lvl1\Lvl1Win.cs" />
+     <Compile Include="Assets\MyScripts\Lvl1\ObjectiveHandlerLvl1.cs" />
      <Compile Include="Assets\MyScripts\Lvl1\StartGame.cs" />
      <Compile Include="Assets\MyScripts\Lvl2\AlarmMovement.cs" />
      <Compile Include="Assets\MyScripts\Lvl2\BridgeOpen.cs" />
@@ -96,8 +96,11 @@
      <Compile Include="Assets\MyScripts\Lvl2\SetLastDoor.cs" />
      <Compile Include="Assets\MyScripts\Lvl2\TrapControl.cs" />
      <Compile Include="Assets\MyScripts\Lvl2\laserScript.cs" />
+     <Compile Include="Assets\MyScripts\Room2DisableBots.cs" />
+     <Compile Include="Assets\MyScripts\TriggersStript\AnimFloorTriggerNavMesh.cs" />
      <Compile Include="Assets\MyScripts\TriggersStript\NavMeshDisableRoom2.cs" />
      <Compile Include="Assets\MyScripts\TriggersStript\NavMeshEnableRoom2.cs" />
+     <Compile Include="Assets\MyScripts\TriggersStript\SimulateCButton.cs" />
      <Compile Include="Assets\MyScripts\TriggersStript\VentilationTrigger.cs" />
      <Compile Include="Assets\MyScripts\WowCamera.cs" />
      <None Include="Assets\Lava_Flowing_Shader\Shaders\Unlit_Lava_Simple.shader" />
