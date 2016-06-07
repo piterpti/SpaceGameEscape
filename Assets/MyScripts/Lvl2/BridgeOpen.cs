@@ -7,7 +7,7 @@ public class BridgeOpen : MonoBehaviour {
     private GameObject bridge;
 
     public bool isBridgeOpen = false;
-    private GameObject NavObstacle;
+
     void Start()
     {
         
@@ -16,8 +16,7 @@ public class BridgeOpen : MonoBehaviour {
 	void OnTriggerEnter()
     {
         ControllerSetup.EnableButtonQ();
-        NavObstacle = GameObject.Find("NavObstacle");
-        NavObstacle.SetActive(false);
+
         if (!isBridgeOpen)
         {
             GetComponent<Renderer>().material.color = Color.green;
