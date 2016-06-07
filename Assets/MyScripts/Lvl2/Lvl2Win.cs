@@ -12,7 +12,7 @@ public class Lvl2Win : MonoBehaviour {
     private bool CATWOMAN_ENTER = false;
     private bool SCIENCIST_ENTER = false;
 
-    private const string NEXT_SCENE = "Menu";
+    private const string NEXT_SCENE = "EndGame";
     
     void Update()
     {

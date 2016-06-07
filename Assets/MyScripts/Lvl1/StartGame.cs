@@ -12,4 +12,9 @@ public class StartGame : MonoBehaviour {
     public void ExitGameFunction() {
         Application.Quit();
     }
+    public void LoadMenu()
+    {
+        SceneManager.LoadScene("Menu");
+        //Cursor.visible = false;
+    }
 }

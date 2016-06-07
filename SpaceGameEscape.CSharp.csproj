@@ -58,6 +58,12 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
@@ -91,8 +97,8 @@
     <Compile Include="Assets\MyScripts\Lvl1\FloorTrigger.cs" />
     <Compile Include="Assets\MyScripts\Lvl1\Hack.cs" />
     <Compile Include="Assets\MyScripts\Lvl1\LastRoomObjective.cs" />
-    <Compile Include="Assets\MyScripts\Lvl1\Lvl1Hints.cs" />
     <Compile Include="Assets\MyScripts\Lvl1\Lvl1Win.cs" />
+    <Compile Include="Assets\MyScripts\Lvl1\ObjectiveHandlerLvl1.cs" />
     <Compile Include="Assets\MyScripts\Lvl1\StartGame.cs" />
     <Compile Include="Assets\MyScripts\Lvl2\AlarmMovement.cs" />
     <Compile Include="Assets\MyScripts\Lvl2\BridgeOpen.cs" />
